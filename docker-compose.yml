@@ -4,4 +4,4 @@ services:
     ports:
     - 3000:3000
     volumes:
-      - .:/usr/src/app
+      - ./backend:/go/usr/src/app
