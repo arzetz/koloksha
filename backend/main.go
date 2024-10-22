@@ -3,11 +3,13 @@ package main
 import (
 	"net/http"
 
+	"github.com/arzetz/koloksha/database"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	// Инициализация роутера Gin
+	database.ConnectDb()
 	router := gin.Default()
 
 	// Определение маршрута GET для главной страницы
