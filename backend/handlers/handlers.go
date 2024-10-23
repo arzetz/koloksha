@@ -1,6 +1,7 @@
-package main
+package handlers
 
 import (
+	"log"
 	"net/http"
 
 	db "github.com/arzetz/koloksha/database"
@@ -16,8 +17,9 @@ func PlaceOrder(c *gin.Context) {
 		return
 	}
 
-	if err := db.GetDB().Create(&order); err != nil {
+	if err := db.GetDB().Create(&order).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to place order"})
+		log.Println(db.GetDB().Error)
 		return
 	}
 
