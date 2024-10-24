@@ -5,3 +5,5 @@ WORKDIR /go/usr/src/app
 COPY ./backend .
 
 RUN go mod tidy
+
+CMD ["main"]

@@ -18,7 +18,8 @@ func main() {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
 		}
-		c.Header("Cache-Control", "public, max-age=3600") // Кэширование на 1 час
+
+		c.Header("Cache-Control", "public, max-age=3600")
 		c.Header("Expires", time.Now().Add(time.Hour).Format(time.RFC1123))
 		c.Data(http.StatusOK, "image/png", data)
 	})
