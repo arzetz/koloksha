@@ -8,4 +8,4 @@ content-type: application/json
 
 ###
 
-GET http://172.18.0.4:82/
+GET http://0.0.0.0:82/
