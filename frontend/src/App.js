@@ -1,11 +1,13 @@
-import './App.css';
+import HomePage from "./components/HomePage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />}/>
+      </Routes>
+    </Router>
   );
 }
 

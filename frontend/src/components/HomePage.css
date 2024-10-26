@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Random Grotesque Spacious Black"; /* Задайте имя для вашего шрифта */
+    src: url("../fonts/RG-SpaciousBlackIt.woff2");
+  }
+
+  @font-face {
+    font-family: "Random Grotesque Standard Semibold"; /* Задайте имя для вашего шрифта */
+    src: url("../fonts/RG-StandardSemibold.ttf");
+  }
+
+  @font-face {
+    font-family: "Random Grotesque Standard"; /* Задайте имя для вашего шрифта */
+    src: url("../fonts/RG-StandardRegularIt.ttf");
+  }
+
+  @font-face {
+    font-family: "Random Grotesque Spacious"; /* Задайте имя для вашего шрифта */
+    src: url("../fonts/RG-SpaciousRegular.woff2");
+  }
+
+@media (min-width: 1280px) {
+    .background-container {
+        background-image: url("../images/main_background.png"); /* Путь к фоновой картинке */
+        background-size: cover; /*  Покрытие всей области */
+        background-position: center; /*  Центрирование изображения */
+        background-repeat: no-repeat; /*  Без повторений */
+        height: 100vh; /*  Занимаем всю высоту  */
+        
+      }
+}
