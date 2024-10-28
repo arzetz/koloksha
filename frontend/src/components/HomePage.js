@@ -8,6 +8,8 @@ import logo from "../images/logo.png";
 import history_1 from "../images/history_1.png";
 import history_2 from "../images/history_2.png";
 import history_3 from "../images/history_3.png";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 function HomePage() {
   const [bgImage, setBgImage] = useState(backgroundImg);
@@ -36,6 +38,9 @@ function HomePage() {
     };
   }, []);
 
+  useEffect(()=>{
+    Aos.init();
+  }, [])
   return (
     <>
       <header>
@@ -77,7 +82,7 @@ function HomePage() {
           <h1 className="about_us">Знакомство с предприятием</h1>
           <div className="about_us">
             <div className="about_us_p_div">
-              <div className="about_us_inner">
+              <div className="about_us_inner" >
                 <p className="about_us p_1">
                   История завода начинается с 1913 года, когда были построены
                   первые производственные цеха для изготовления сажи. В 1965
@@ -85,10 +90,10 @@ function HomePage() {
                   тракторного завода», а уже позже было переименовано в
                   «Колокшанский агрегатный завод».
                 </p>
-                <Image src={history_1} style={{ display: isHidden ? 'flex' : 'none' }} className="i_1"/>
+                <Image src={history_1} style={{ display: isHidden ? 'flex' : 'none' }} className="i_1" data-aos="fade-left"/>
               </div>
               <div className="about_us_inner">
-              <Image src={history_2} style={{ display: isHidden ? 'flex' : 'none' }} className="i_2"/>
+              <Image src={history_2} style={{ display: isHidden ? 'flex' : 'none' }} className="i_2" data-aos="fade-right"/>
                 <p className="about_us p_2">
                   В 1994 году на базе «КАЗ» был образован филиал Московской промышленно-коммерческой фирмы «Тельтосервис», крупнейшей компании на территории РФ, занимающейся поставкой и реализацией запасных частей, узлов и агрегатов к асфальтосмесительным установкам «Тельтомат».
                 </p>
@@ -101,10 +106,10 @@ function HomePage() {
                   спроектирована, разработана и изготовлена первая
                   асфальтосмесительная установка «КА-160»
                 </p>
-                <Image src={history_3} style={{ display: isHidden ? 'flex' : 'none' }} className="i_1"/>
+                <Image src={history_3} style={{ display: isHidden ? 'flex' : 'none' }} className="i_1" data-aos="fade-left"/>
               </div>
             </div>
-            <div className="historybar">
+            <div className="historybar" data-aos="fade-left">
               <Image src={historyBar} className="historybar_image"  style={{ display: isHidden ? 'none' : 'flex' }}/>
             </div>
           </div>
