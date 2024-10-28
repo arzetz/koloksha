@@ -18,6 +18,10 @@
   src: url("../fonts/RG-SpaciousRegular.woff2");
 }
 
+main{
+  background-color: #D6D6D6;
+}
+
 .flex {
   display: flex; /* Включаем Flexbox */
 }
@@ -36,6 +40,7 @@ p.header {
   color: #ffffff;
   font-size: 48px;
   font-family: "Random Grotesque Spacious Black";
+ 
 }
 
 div.p_header {
@@ -56,25 +61,60 @@ div.p_header {
 .bg-container {
   position: relative;
   width: 100%;
-  height: 100vh;
   overflow: hidden;
+  padding-bottom: 23%;
 }
 
 .bg-image {
   position: absolute;
   z-index: -1;
-}
-
-.centered-container {
-  display: flex;
-}
-
-  .bg-image {
-    width: 100%;
-    height: auto; /* Фиксированная высота, изображение расширяется по ширине */
+  width: 100%;
+  height: 100%; /* Добавлено для заполнения высоты родителя */
+  object-fit: cover; /* Обеспечивает правильное масштабирование изображения */
   }
+/*Блок знакомство*/
+div.about_us{
+  display: flex;
+  margin-top: 130px;
+  justify-content: center;
+}
 
+div.about_us_inner{
+  margin-top: 80px;
+  margin-bottom: 230px;
+  width: 1240px;
+  height: 220px;
+}
 
+h1.about_us{
+  margin-top: 270px;
+  text-align: center;
+  font-size: 96px;
+  color: #242424;
+  font-family: "Random Grotesque Standard Semibold";
+}
+p.about_us{
+  font-size: 40px;
+  color: #000000;
+  font-family: "Random Grotesque Standard"
+}
+
+.about_us_p_div{
+  margin-right: 5%;
+}
+
+@media (max-width: 1730px) {
+  div.about_us_inner{
+    margin-top: 45px;
+    width: 100%;
+  }
+  .about_us_p_div{
+    margin-left: 2%;
+  }
+  .historybar{
+    margin-right: 2%;
+  }
+}
 
 @media (max-width: 1470px) {
   div.header {
@@ -107,7 +147,32 @@ div.p_header {
   .logo {
     width: 15%;
   }
+  div.about_us_inner{
+    margin-top: 45px;
+    width: 100%;
+  }
+  .about_us_p_div{
+    margin-left: 2%;
+  }
+  .historybar{
+    margin-right: 2%;
+  }
+  h1.about_us{
+    margin-top: 250px;
+    text-align: center;
+    font-size: 72px;
+    color: #242424;
+    font-family: "Random Grotesque Standard Semibold";
+  }
+  p.about_us{
+    font-size: 32px;
+    color: #000000;
+    font-family: "Random Grotesque Standard"
+  }
 }
+/* Уменьшить historybar .historybar {
+    width: 15%;
+  }*/
 
 @media (max-width: 1280px) {
   div.header {
@@ -148,6 +213,9 @@ div.p_header {
 }
 
 @media (max-width: 768px){
+  .bg-container {
+    padding-bottom: 0%
+  }
   .bg-image {
     width: 100%;
     height: 482px; /* Фиксированная высота, изображение расширяется по ширине */
