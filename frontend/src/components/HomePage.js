@@ -1,20 +1,26 @@
 import "./HomePage.css";
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Nav, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import backgroundImg from "../images/main_background.png";
 import backgroundImgSmall from "../images/main_background_small.png";
 import historyBar from "../images/history_bar.png";
 import logo from "../images/logo.png";
+import history_1 from "../images/history_1.png";
+import history_2 from "../images/history_2.png";
+import history_3 from "../images/history_3.png";
 
 function HomePage() {
   const [bgImage, setBgImage] = useState(backgroundImg);
+  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         setBgImage(backgroundImgSmall);
+        setIsHidden(true);
       } else {
         setBgImage(backgroundImg);
+        setIsHidden(false);
       }
     };
 
@@ -72,31 +78,34 @@ function HomePage() {
           <div className="about_us">
             <div className="about_us_p_div">
               <div className="about_us_inner">
-                <p className="about_us">
+                <p className="about_us p_1">
                   История завода начинается с 1913 года, когда были построены
                   первые производственные цеха для изготовления сажи. В 1965
                   году предприятие получило статус филиала «Владимирского
                   тракторного завода», а уже позже было переименовано в
                   «Колокшанский агрегатный завод».
                 </p>
+                <Image src={history_1} style={{ display: isHidden ? 'flex' : 'none' }} className="i_1"/>
               </div>
               <div className="about_us_inner">
-                <p className="about_us">
+              <Image src={history_2} style={{ display: isHidden ? 'flex' : 'none' }} className="i_2"/>
+                <p className="about_us p_2">
                   В 1994 году на базе «КАЗ» был образован филиал Московской промышленно-коммерческой фирмы «Тельтосервис», крупнейшей компании на территории РФ, занимающейся поставкой и реализацией запасных частей, узлов и агрегатов к асфальтосмесительным установкам «Тельтомат».
                 </p>
               </div>
               <div className="about_us_inner">
-                <p className="about_us">
+                <p className="about_us p_1">
                   В короткий срок «Колокшанский агрегатный завод» освоил выпуск
                   многих узлов и агрегатов: дозаторов, транспортёров, сушильных
                   барабанов, и уже в 2002 году специалистами завода была
                   спроектирована, разработана и изготовлена первая
                   асфальтосмесительная установка «КА-160»
                 </p>
+                <Image src={history_3} style={{ display: isHidden ? 'flex' : 'none' }} className="i_1"/>
               </div>
             </div>
             <div className="historybar">
-              <Image src={historyBar}/>
+              <Image src={historyBar} className="historybar_image"  style={{ display: isHidden ? 'none' : 'flex' }}/>
             </div>
           </div>
       </main>
