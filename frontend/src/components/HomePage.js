@@ -1,4 +1,4 @@
-import "./HomePage.css";
+import "./HomePage.scss";
 import React, { useState, useEffect } from "react";
 import { Image } from "react-bootstrap";
 import backgroundImg from "../images/main_background.png";
@@ -112,6 +112,9 @@ function HomePage() {
             <div className="historybar" data-aos="fade-left">
               <Image src={historyBar} className="historybar_image"  style={{ display: isHidden ? 'none' : 'flex' }}/>
             </div>
+          </div>
+          <div>
+          <h1 className="products">Наша продукция</h1>
           </div>
       </main>
     </>

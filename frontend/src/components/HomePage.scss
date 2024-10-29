@@ -1,56 +1,82 @@
-@font-face {
-  font-family: "Random Grotesque Spacious Black"; /* Задайте имя для вашего шрифта */
-  src: url("../fonts/RG-SpaciousBlackIt.woff2");
-}
-
-@font-face {
-  font-family: "Random Grotesque Standard Semibold"; /* Задайте имя для вашего шрифта */
-  src: url("../fonts/RG-StandardSemibold.ttf");
-}
-
-@font-face {
-  font-family: "Random Grotesque Standard"; /* Задайте имя для вашего шрифта */
-  src: url("../fonts/RG-StandardRegularIt.ttf");
-}
-
-@font-face {
-  font-family: "Random Grotesque Spacious"; /* Задайте имя для вашего шрифта */
-  src: url("../fonts/RG-SpaciousRegular.woff2");
-}
+@import "colors";
+@import "fonts";
 
 main {
   background-color: #d6d6d6;
 }
 
-.flex {
-  display: flex; /* Включаем Flexbox */
-}
-
-div.header {
-  margin-top: 65px;
-}
-
+/*Стили текста*/
 span.header {
-  color: #ffffff;
+  color: $full_white;
   font-size: 32px;
-  font-family: "Random Grotesque Spacious Black";
+  font-family: $rgspb;
 }
 
-p.header {
-  color: #ffffff;
-  font-size: 48px;
-  font-family: "Random Grotesque Spacious Black";
+h1 {
+  &.about_us {
+    margin-top: 270px;
+    text-align: center;
+    font-size: 88px;
+    color: $main_black;
+    font-family: $rgsts;
+  }
+  &.products {
+    margin-top: 200px;
+    text-align: center;
+    font-size: 88px;
+    color: $main_black;
+    font-family: $rgsts;
+  }
 }
 
-div.p_header {
-  margin-top: 20%;
-  margin-left: 68px;
+p {
+  &.header {
+    color: $full_white;
+    font-size: 48px;
+    font-family: $rgspb;
+  }
+  &.about_us {
+    font-size: 40px;
+    color: #000000;
+    font-family: $rgst;
+  }
 }
+/*<<--------->>*/
+
+/*Стили контейнеров*/
+div {
+  &.header {
+    margin-top: 65px;
+  }
+  &.p_header {
+    margin-top: 20%;
+    margin-left: 68px;
+  }
+  &.about_us {
+    display: flex;
+    margin-top: 130px;
+    justify-content: center;
+  }
+  &.about_us_inner {
+    margin-top: 80px;
+    margin-bottom: 230px;
+    width: 1240px;
+    height: 220px;
+  }
+  &.about_us_p_div {
+    margin-right: 5%;
+  }
+}
+/*<<---------->>*/
 
 .logo_img {
   margin-top: 56px;
   margin-left: 38px;
   margin-right: 35px;
+}
+
+.flex {
+  display: flex;
 }
 
 .flex_small {
@@ -68,85 +94,83 @@ div.p_header {
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: 100%; /* Добавлено для заполнения высоты родителя */
-  object-fit: cover; /* Обеспечивает правильное масштабирование изображения */
-}
-/*Блок знакомство*/
-div.about_us {
-  display: flex;
-  margin-top: 130px;
-  justify-content: center;
-}
-
-div.about_us_inner {
-  margin-top: 80px;
-  margin-bottom: 230px;
-  width: 1240px;
-  height: 220px;
-}
-
-h1.about_us {
-  margin-top: 270px;
-  text-align: center;
-  font-size: 88px;
-  color: #242424;
-  font-family: "Random Grotesque Standard Semibold";
-}
-p.about_us {
-  font-size: 40px;
-  color: #000000;
-  font-family: "Random Grotesque Standard";
-}
-
-.about_us_p_div {
-  margin-right: 5%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 1730px) {
-  div.about_us_inner {
-    margin-top: 45px;
-    width: 100%;
-  }
-  .about_us_p_div {
-    margin-left: 2%;
-  }
-  .historybar {
-    margin-right: 2%;
+  div {
+    &.about_us_inner {
+      margin-top: 45px;
+      width: 100%;
+    }
+    &.about_us_p_div {
+      margin-left: 2%;
+    }
+    &.historybar {
+      margin-right: 2%;
+    }
   }
 }
 
 @media (max-width: 1470px) {
-  div.header {
-    margin-top: 4.2%;
-  }
-
+  /*Стили текста*/
   span.header {
-    color: #ffffff;
     font-size: 28px;
-    font-family: "Random Grotesque Spacious Black";
   }
 
-  p.header {
-    color: #ffffff;
-    font-size: 32px;
-    font-family: "Random Grotesque Spacious Black";
+  h1 {
+    &.about_us {
+      margin-top: 150px;
+      font-size: 72px;
+    }
+    &.products {
+      margin-top: 130px;
+      font-size: 72px;
+    }
   }
-  h1.about_us {
-    margin-top: 150px;
-    font-size: 72px;
-    color: #242424;
-    font-family: "Random Grotesque Standard Semibold";
+
+  p {
+    &.header {
+      font-size: 32px;
+    }
+    &.about_us {
+      margin-top: 20px;
+      font-size: 32px;
+    }
   }
-  p.about_us {
-    margin-top: 20px;
-    font-size: 32px;
-    color: #000000;
-    font-family: "Random Grotesque Standard";
+  /*<<--------->>*/
+
+  /*Стили контейнеров*/
+  div {
+    &.header {
+      margin-top: 4.2%;
+    }
+    &.about_us_inner {
+      margin-top: 0px;
+      margin-bottom: 80px;
+      width: 820px;
+      height: 220px;
+    }
+    &.p_header {
+      margin-top: 20%;
+      margin-left: 68px;
+    }
   }
-  div.p_header {
-    margin-top: 20%;
-    margin-left: 68px;
+
+  .logo {
+    width: 15%;
   }
+
+  .about_us_p_div {
+    margin-left: 1%;
+  }
+
+  .historybar {
+    margin-right: 1%;
+  }
+
+   /*<<--------->>*/
 
   .logo_img {
     width: 50%;
@@ -154,21 +178,7 @@ p.about_us {
     margin-left: 58px;
   }
 
-  .logo {
-    width: 15%;
-  }
-  div.about_us_inner {
-    margin-top: 0px;
-    margin-bottom: 80px;
-    width: 820px;
-    height: 220px;
-  }
-  .about_us_p_div {
-    margin-left: 1%;
-  }
-  .historybar {
-    margin-right: 1%;
-  }
+  
   .historybar_image {
     width: 240px;
     height: 820px;
@@ -176,50 +186,65 @@ p.about_us {
 }
 
 @media (max-width: 1280px) {
-  div.header {
-    margin-top: 4.3%;
-  }
-
+  /*Стили текста*/
   span.header {
     font-size: 22px;
   }
 
-  p.header {
-    font-size: 28px;
+  p {
+    &.header {
+      font-size: 28px;
+    }
+    &.about_us {
+      margin-top: 10px;
+      font-size: 26px;
+    }
   }
-  h1.about_us {
-    margin-top: 120px;
-    font-size: 58px;
+
+  h1 {
+    &.about_us {
+      margin-top: 120px;
+      font-size: 58px;
+    }
+    &.products {
+      margin-top: 110px;
+      font-size: 58px;
+    }
   }
-  p.about_us {
-    margin-top: 10px;
-    font-size: 26px;
+  /*<<--------->>*/
+
+  /*Стили контейнеров*/
+  div {
+    &.header {
+      margin-top: 4.3%;
+    }
+    &.p_header {
+      margin-top: 20%;
+      margin-left: 68px;
+    }
+    &.about_us_inner {
+      margin-top: 20px;
+      margin-bottom: 45px;
+      width: 720px;
+      height: 230px;
+    }
+    &.about_us {
+      margin-top: 100px;
+    }
   }
-  div.p_header {
-    margin-top: 20%;
-    margin-left: 68px;
+
+  .about_us_p_div {
+    margin-left: 2%;
+    margin-right: 3%;
   }
+  /*<<--------->>*/
+
   .historybar_image {
     width: 220px;
     height: 747px;
   }
-  .about_us_p_div {
-    margin-left: 2%;
-  }
   .historybar {
-    margin-right: 2%;
-  }
-  div.about_us_inner {
-    margin-top: 20px;
-    margin-bottom: 45px;
-    width: 720px;
-    height: 230px;
-  }
-  .about_us_p_div {
-    margin-right: 3%;
-  }
-  div.about_us {
-    margin-top: 100px;
+    margin-left: 1%;
   }
 }
 
@@ -402,7 +427,6 @@ p.about_us {
   }
 }
 
-
 @media (max-width: 520px) {
   div.about_us_inner {
     margin-bottom: 40px;
@@ -420,7 +444,7 @@ p.about_us {
     font-size: 14px;
   }
   .p_2 {
-   margin-right: 10px;
+    margin-right: 10px;
   }
   .i_2 {
     margin-right: 10px;
