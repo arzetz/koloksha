@@ -66,8 +66,37 @@ div {
   &.about_us_p_div {
     margin-right: 5%;
   }
+  &.outer_product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Задает расстояние между элементами */
+    margin-top: 100px;
+  }
+
+  &.inner_product {
+    span {
+      margin-top: 10px; /* Отступ между изображением и текстом */
+      text-align: center;
+      font-family: $rgsp;
+      font-size: 64px;
+      &.details{
+        font-size: 40px;
+      }
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 40px); /* Ширина элемента, чтобы вмещать по 3 в ряд */
+    margin-bottom: 30px; /* Отступ между рядами */
+  }
 }
 /*<<---------->>*/
+
+.inner_product img {
+  width: 80%; /* Подгоняет размер изображения под ширину родителя */
+  height: auto; /* Сохраняет пропорции изображения */
+}
 
 .logo_img {
   margin-top: 56px;
@@ -96,6 +125,10 @@ div {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.block {
+  display: block;
 }
 
 @media (max-width: 1730px) {
@@ -170,7 +203,7 @@ div {
     margin-right: 1%;
   }
 
-   /*<<--------->>*/
+  /*<<--------->>*/
 
   .logo_img {
     width: 50%;
@@ -178,7 +211,6 @@ div {
     margin-left: 58px;
   }
 
-  
   .historybar_image {
     width: 240px;
     height: 820px;
