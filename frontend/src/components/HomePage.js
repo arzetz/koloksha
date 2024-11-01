@@ -146,27 +146,27 @@ function HomePage() {
           <h1 className="products">Наша продукция</h1>
         </div>
         <div className="outer_product flex">
-          <div className="inner_product ">
+          <div className="inner_product" data-aos="fade-left" data-aos-duration="600">
           <Image src={ka240}/>
           <span>КА-240</span>
           </div>
-          <div className="inner_product ">
+          <div className="inner_product" data-aos="fade-left" data-aos-duration="800">
           <Image src={ka160}/>
           <span>КА-160</span>
           </div>
-          <div className="inner_product ">
+          <div className="inner_product" data-aos="fade-left" data-aos-duration="1000">
           <Image src={ka120}/>
           <span>КА-120</span>
           </div>
-          <div className="inner_product ">
+          <div className="inner_product" data-aos="fade-right" data-aos-duration="1000">
           <Image src={ugs240}/>
           <span>УГС-240</span>
           </div>
-          <div className="inner_product ">
+          <div className="inner_product" data-aos="fade-right" data-aos-duration="800">
           <Image src={details}/>
           <span className="details">Запчасти для <br></br> заводов КАЗ</span>
           </div>
-          <div className="inner_product ">
+          <div className="inner_product" data-aos="fade-right" data-aos-duration="600">
           <Image src={details_not_ka}/>
           <span className="details">Запчасти для <br></br>импортных АСУ </span>
           </div>
