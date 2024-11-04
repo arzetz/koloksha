@@ -1,6 +1,7 @@
 $rgspb: Random Grotesque Spacious;
 $rgsts: Random Grotesque Standard Semibold;
 $rgst: Random Grotesque Standard;
+$rgsp: Random Grotesque Spacious;
 
 
 @font-face {
@@ -19,6 +20,6 @@ $rgst: Random Grotesque Standard;
 }
 
 @font-face {
-  font-family: "Random Grotesque Spacious"; /* Задайте имя для вашего шрифта */
+  font-family: $rgsp; /* Задайте имя для вашего шрифта */
   src: url("../fonts/RG-SpaciousRegular.woff2");
 }

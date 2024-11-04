@@ -8,10 +8,32 @@ import logo from "../images/logo.png";
 import history_1 from "../images/history_1.png";
 import history_2 from "../images/history_2.png";
 import history_3 from "../images/history_3.png";
+import ka240 from "../images/fullsize_ka240.png";
+import ka160 from "../images/fullsize_ka160.png";
+import ka120 from "../images/fullsize_ka120.png";
+import ugs240 from "../images/fullsize_ugs.png";
+import details from "../images/fullsize_details.png";
+import details_not_ka from "../images/fullsize_details_not_kaz.png";
+import close_button from "../images/button.png"
 import Aos from "aos";
-import 'aos/dist/aos.css'
+import "aos/dist/aos.css";
 
 function HomePage() {
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const handleImageClick = (product) => {
+    setSelectedProduct(product); // Устанавливаем выбранный продукт
+  };
+
+  const closeOverlay = () => {
+    setSelectedProduct(null); // Закрываем оверлей
+    setFadeOut(true)
+  };
+
+
+
   const [bgImage, setBgImage] = useState(backgroundImg);
   const [isHidden, setIsHidden] = useState(false);
 
@@ -38,9 +60,9 @@ function HomePage() {
     };
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     Aos.init();
-  }, [])
+  }, []);
   return (
     <>
       <header>
@@ -77,45 +99,111 @@ function HomePage() {
           </div>
         </div>
       </header>
+
+      
       <main>
-        <br/>
-          <h1 className="about_us">Знакомство с предприятием</h1>
-          <div className="about_us">
-            <div className="about_us_p_div">
-              <div className="about_us_inner" >
-                <p className="about_us p_1">
-                  История завода начинается с 1913 года, когда были построены
-                  первые производственные цеха для изготовления сажи. В 1965
-                  году предприятие получило статус филиала «Владимирского
-                  тракторного завода», а уже позже было переименовано в
-                  «Колокшанский агрегатный завод».
-                </p>
-                <Image src={history_1} style={{ display: isHidden ? 'flex' : 'none' }} className="i_1" data-aos="fade-left"/>
-              </div>
-              <div className="about_us_inner">
-              <Image src={history_2} style={{ display: isHidden ? 'flex' : 'none' }} className="i_2" data-aos="fade-right"/>
-                <p className="about_us p_2">
-                  В 1994 году на базе «КАЗ» был образован филиал Московской промышленно-коммерческой фирмы «Тельтосервис», крупнейшей компании на территории РФ, занимающейся поставкой и реализацией запасных частей, узлов и агрегатов к асфальтосмесительным установкам «Тельтомат».
-                </p>
-              </div>
-              <div className="about_us_inner">
-                <p className="about_us p_1">
-                  В короткий срок «Колокшанский агрегатный завод» освоил выпуск
-                  многих узлов и агрегатов: дозаторов, транспортёров, сушильных
-                  барабанов, и уже в 2002 году специалистами завода была
-                  спроектирована, разработана и изготовлена первая
-                  асфальтосмесительная установка «КА-160»
-                </p>
-                <Image src={history_3} style={{ display: isHidden ? 'flex' : 'none' }} className="i_1" data-aos="fade-left"/>
-              </div>
+        <br />
+        <h1 className="about_us">Знакомство с предприятием</h1>
+        <div className="about_us">
+          <div className="about_us_p_div">
+            <div className="about_us_inner">
+              <p className="about_us p_1">
+                История завода начинается с 1913 года, когда были построены
+                первые производственные цеха для изготовления сажи. В 1965 году
+                предприятие получило статус филиала «Владимирского тракторного
+                завода», а уже позже было переименовано в «Колокшанский
+                агрегатный завод».
+              </p>
+              <Image
+                src={history_1}
+                style={{ display: isHidden ? "flex" : "none" }}
+                className="i_1"
+                data-aos="fade-left"
+              />
             </div>
-            <div className="historybar" data-aos="fade-left">
-              <Image src={historyBar} className="historybar_image"  style={{ display: isHidden ? 'none' : 'flex' }}/>
+            <div className="about_us_inner">
+              <Image
+                src={history_2}
+                style={{ display: isHidden ? "flex" : "none" }}
+                className="i_2"
+                data-aos="fade-right"
+              />
+              <p className="about_us p_2">
+                В 1994 году на базе «КАЗ» был образован филиал Московской
+                промышленно-коммерческой фирмы «Тельтосервис», крупнейшей
+                компании на территории РФ, занимающейся поставкой и реализацией
+                запасных частей, узлов и агрегатов к асфальтосмесительным
+                установкам «Тельтомат».
+              </p>
+            </div>
+            <div className="about_us_inner">
+              <p className="about_us p_1">
+                В короткий срок «Колокшанский агрегатный завод» освоил выпуск
+                многих узлов и агрегатов: дозаторов, транспортёров, сушильных
+                барабанов, и уже в 2002 году специалистами завода была
+                спроектирована, разработана и изготовлена первая
+                асфальтосмесительная установка «КА-160»
+              </p>
+              <Image
+                src={history_3}
+                style={{ display: isHidden ? "flex" : "none" }}
+                className="i_1"
+                data-aos="fade-left"
+              />
             </div>
           </div>
-          <div>
+          <div className="historybar" data-aos="fade-left">
+            <Image
+              src={historyBar}
+              className="historybar_image"
+              style={{ display: isHidden ? "none" : "flex" }}
+            />
+          </div>
+        </div>
+        <div>
           <h1 className="products">Наша продукция</h1>
+        </div>
+        <div className="outer_product flex">
+          <div className="inner_product" data-aos="fade-left" data-aos-duration="600" onClick={() => handleImageClick({ src: ka240})}>
+          <Image src={ka240}/>
+          <span>КА-240</span>
           </div>
+          <div className="inner_product" data-aos="fade-left" data-aos-duration="800">
+          <Image src={ka160}/>
+          <span>КА-160</span>
+          </div>
+          <div className="inner_product" data-aos="fade-left" data-aos-duration="1000">
+          <Image src={ka120}/>
+          <span>КА-120</span>
+          </div>
+          <div className="inner_product" data-aos="fade-right" data-aos-duration="1000">
+          <Image src={ugs240}/>
+          <span>УГС-240</span>
+          </div>
+          <div className="inner_product" data-aos="fade-right" data-aos-duration="800">
+          <Image src={details}/>
+          <span className="details">Запчасти для <br></br> заводов КАЗ</span>
+          </div>
+          <div className="inner_product" data-aos="fade-right" data-aos-duration="600">
+          <Image src={details_not_ka}/>
+          <span className="details">Запчасти для <br></br>импортных АСУ </span>
+          </div>
+        </div>
+        {selectedProduct && (
+        <div className="overlay" onClick={closeOverlay}>
+          <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+            <Image src={selectedProduct.src} className="overlay-image" />
+            <Image src={close_button} className="close" />
+            <p>Установка «КА-240», циклического действия, производительностью 240 т/час.
+<hr></hr>
+Оборудование спроектировано и  изготовлено полностью в транспортном габарите, что не требует дополнительных разрешений. Установка предназначена для производства высококачественной  асфальтобетонной смеси по качеству и составу соответствующей 
+ГОСТ: 9128-87, 31015.
+<hr></hr>
+На все АСУ предоставляется гарантия
+ 18 месяцев.</p>
+          </div>
+        </div>
+      )}
       </main>
     </>
   );

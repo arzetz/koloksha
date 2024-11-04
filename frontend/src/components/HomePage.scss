@@ -1,6 +1,71 @@
 @import "colors";
 @import "fonts";
 
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(33, 22, 4, 0.868);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s forwards;
+}
+.overlay-content {
+  background: #e4e4e4;
+  padding: 25px;
+  border-radius: 30px;
+  max-width: 350px;
+  height: 600px;
+  text-align: center;
+}
+.overlay-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.overlay-content p {
+  color: rgb(41, 41, 41);
+}
+
+.close {
+  position: absolute;
+  cursor: pointer;
+  top: 235px;
+  right: 235px;
+  z-index: 10; /* Устанавливаем приоритет кнопки закрытия */
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+
 main {
   background-color: #d6d6d6;
 }
@@ -21,7 +86,7 @@ h1 {
     font-family: $rgsts;
   }
   &.products {
-    margin-top: 200px;
+    margin-top: 50px;
     text-align: center;
     font-size: 88px;
     color: $main_black;
@@ -66,8 +131,37 @@ div {
   &.about_us_p_div {
     margin-right: 5%;
   }
+  &.outer_product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Задает расстояние между элементами */
+    margin-top: 100px;
+  }
+
+  &.inner_product {
+    span {
+      margin-top: 10px; /* Отступ между изображением и текстом */
+      text-align: center;
+      font-family: $rgsp;
+      font-size: 64px;
+      &.details {
+        font-size: 40px;
+      }
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 40px); /* Ширина элемента, чтобы вмещать по 3 в ряд */
+    margin-bottom: 30px; /* Отступ между рядами */
+  }
 }
 /*<<---------->>*/
+
+.inner_product img {
+  width: 80%; /* Подгоняет размер изображения под ширину родителя */
+  height: auto; /* Сохраняет пропорции изображения */
+}
 
 .logo_img {
   margin-top: 56px;
@@ -98,6 +192,10 @@ div {
   object-fit: cover;
 }
 
+.block {
+  display: block;
+}
+
 @media (max-width: 1730px) {
   div {
     &.about_us_inner {
@@ -125,7 +223,7 @@ div {
       font-size: 72px;
     }
     &.products {
-      margin-top: 130px;
+      margin-top: 50px;
       font-size: 72px;
     }
   }
@@ -156,6 +254,17 @@ div {
       margin-top: 20%;
       margin-left: 68px;
     }
+    &.inner_product {
+      span {
+        margin-top: 10px; /* Отступ между изображением и текстом */
+        text-align: center;
+        font-family: $rgsp;
+        font-size: 58px;
+        &.details {
+          font-size: 32px;
+        }
+      }
+    }
   }
 
   .logo {
@@ -170,7 +279,7 @@ div {
     margin-right: 1%;
   }
 
-   /*<<--------->>*/
+  /*<<--------->>*/
 
   .logo_img {
     width: 50%;
@@ -178,7 +287,6 @@ div {
     margin-left: 58px;
   }
 
-  
   .historybar_image {
     width: 240px;
     height: 820px;
@@ -207,7 +315,7 @@ div {
       font-size: 58px;
     }
     &.products {
-      margin-top: 110px;
+      margin-top: 50px;
       font-size: 58px;
     }
   }
@@ -231,6 +339,17 @@ div {
     &.about_us {
       margin-top: 100px;
     }
+    &.outer_product {
+      margin-top: 70px;
+    }
+    &.inner_product {
+      span {
+        font-size: 48px;
+        &.details {
+          font-size: 30px;
+        }
+      }
+    }
   }
 
   .about_us_p_div {
@@ -253,21 +372,26 @@ div {
     font-size: 18px;
   }
 
-  p.header {
-    font-size: 24px;
+  p {
+    &.about_us {
+      margin-top: 10px;
+      font-size: 22px;
+    }
+    &.header {
+      font-size: 24px;
+    }
   }
-  h1.about_us {
-    margin-top: 100px;
-    font-size: 42px;
+  h1 {
+    &.about_us {
+      margin-top: 100px;
+      font-size: 42px;
+    }
+    &.products {
+      margin-top: 60px;
+      font-size: 42px;
+    }
   }
-  p.about_us {
-    margin-top: 10px;
-    font-size: 22px;
-  }
-  div.p_header {
-    margin-top: 20%;
-    margin-left: 5%;
-  }
+
   .logo_img {
     margin-left: 26%;
     margin-top: 30%;
@@ -276,14 +400,31 @@ div {
     width: 194px;
     height: 657px;
   }
-  div.about_us_inner {
-    margin-top: 20px;
-    margin-bottom: 5px;
-    width: 100%;
-    height: 220px;
-  }
-  div.about_us {
-    margin-top: 70px;
+  div {
+    &.p_header {
+      margin-top: 20%;
+      margin-left: 5%;
+    }
+    &.about_us_inner {
+      margin-top: 20px;
+      margin-bottom: 5px;
+      width: 100%;
+      height: 220px;
+    }
+    &.about_us {
+      margin-top: 70px;
+    }
+    &.outer_product {
+      margin-top: 50px;
+    }
+    &.inner_product {
+      span {
+        font-size: 40px;
+        &.details {
+          font-size: 24px;
+        }
+      }
+    }
   }
 }
 
@@ -298,28 +439,62 @@ div {
   span.header {
     font-size: 32px;
   }
-  p.header {
-    font-size: 24px;
-    text-align: center;
+  p {
+    &.header {
+      font-size: 24px;
+      text-align: center;
+    }
+    &.about_us {
+      margin-top: 5px;
+      font-size: 20px;
+    }
   }
-  h1.about_us {
-    margin-top: 100px;
-    font-size: 36px;
+  h1 {
+    &.about_us {
+      margin-top: 100px;
+      font-size: 36px;
+    }
+    &.products {
+      margin-top: 30px;
+      font-size: 36px;
+    }
   }
-  p.about_us {
-    margin-top: 5px;
-    font-size: 20px;
-  }
+
   .logo {
     display: none;
   }
-  div.header {
-    width: 100%;
-    margin-top: 165px;
-    text-align: center;
-  }
-  div.p_header {
-    display: none;
+  div {
+    &.header {
+      width: 100%;
+      margin-top: 165px;
+      text-align: center;
+    }
+    &.p_header {
+      display: none;
+    }
+    &.about_us_inner {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 80px;
+      display: flex;
+      text-align: left;
+    }
+    &.about_us {
+      margin-top: 55px;
+      justify-content: left;
+    }
+    &.outer_product {
+      margin-top: 50px;
+    }
+    &.inner_product {
+      span {
+        font-size: 32px;
+        &.details {
+          font-size: 20px;
+        }
+      }
+      margin-bottom: 15px; /* Отступ между рядами */
+    }
   }
   .flex_small {
     width: 100%;
@@ -337,17 +512,7 @@ div {
   .about_us_p_div {
     text-align: center;
   }
-  div.about_us_inner {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 80px;
-    display: flex;
-    text-align: left;
-  }
-  div.about_us {
-    margin-top: 55px;
-    justify-content: left;
-  }
+
   .p_1 {
     width: 80%;
     margin-left: 20px;
@@ -365,13 +530,32 @@ div {
 }
 
 @media (max-width: 681px) {
-  h1.about_us {
-    margin-top: 100px;
-    font-size: 32px;
+  h1 {
+    &.about_us {
+      margin-top: 100px;
+      font-size: 32px;
+    }
+    &.products {
+      margin-top: 10px;
+      font-size: 32px;
+    }
   }
   p.about_us {
     margin-top: 10px;
     font-size: 18px;
+  }
+  div {
+    &.inner_product {
+      span {
+        font-size: 26px;
+        &.details {
+          font-size: 16px;
+        }
+      }
+    }
+    &.outer_product {
+      margin-top: 40px;
+    }
   }
   .i_1 {
     margin-left: 20px;
@@ -388,15 +572,6 @@ div {
 }
 
 @media (max-width: 581px) {
-  div.about_us_inner {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 50px;
-  }
-  div.about_us {
-    margin-top: 40px;
-    justify-content: left;
-  }
   h1.about_us {
     margin-top: 100px;
     font-size: 32px;
@@ -405,6 +580,26 @@ div {
     margin-top: 5px;
     font-size: 16px;
   }
+  div{
+    &.about_us_inner {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 50px;
+  }
+  &.about_us {
+    margin-top: 40px;
+    justify-content: left;
+  }
+  &.inner_product {
+    span {
+      font-size: 22px;
+      &.details {
+        font-size: 12 px;
+      }
+    }
+  }
+}
+  
   .p_1 {
     width: 80%;
     margin-left: 20px;
