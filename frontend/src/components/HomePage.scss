@@ -1,6 +1,71 @@
 @import "colors";
 @import "fonts";
 
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(33, 22, 4, 0.868);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s forwards;
+}
+.overlay-content {
+  background: #e4e4e4;
+  padding: 25px;
+  border-radius: 30px;
+  max-width: 350px;
+  height: 600px;
+  text-align: center;
+}
+.overlay-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.overlay-content p {
+  color: rgb(41, 41, 41);
+}
+
+.close {
+  position: absolute;
+  cursor: pointer;
+  top: 235px;
+  right: 235px;
+  z-index: 10; /* Устанавливаем приоритет кнопки закрытия */
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+
 main {
   background-color: #d6d6d6;
 }

@@ -14,10 +14,26 @@ import ka120 from "../images/fullsize_ka120.png";
 import ugs240 from "../images/fullsize_ugs.png";
 import details from "../images/fullsize_details.png";
 import details_not_ka from "../images/fullsize_details_not_kaz.png";
+import close_button from "../images/button.png"
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 function HomePage() {
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const handleImageClick = (product) => {
+    setSelectedProduct(product); // Устанавливаем выбранный продукт
+  };
+
+  const closeOverlay = () => {
+    setSelectedProduct(null); // Закрываем оверлей
+    setFadeOut(true)
+  };
+
+
+
   const [bgImage, setBgImage] = useState(backgroundImg);
   const [isHidden, setIsHidden] = useState(false);
 
@@ -83,6 +99,8 @@ function HomePage() {
           </div>
         </div>
       </header>
+
+      
       <main>
         <br />
         <h1 className="about_us">Знакомство с предприятием</h1>
@@ -146,7 +164,7 @@ function HomePage() {
           <h1 className="products">Наша продукция</h1>
         </div>
         <div className="outer_product flex">
-          <div className="inner_product" data-aos="fade-left" data-aos-duration="600">
+          <div className="inner_product" data-aos="fade-left" data-aos-duration="600" onClick={() => handleImageClick({ src: ka240})}>
           <Image src={ka240}/>
           <span>КА-240</span>
           </div>
@@ -171,6 +189,21 @@ function HomePage() {
           <span className="details">Запчасти для <br></br>импортных АСУ </span>
           </div>
         </div>
+        {selectedProduct && (
+        <div className="overlay" onClick={closeOverlay}>
+          <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+            <Image src={selectedProduct.src} className="overlay-image" />
+            <Image src={close_button} className="close" />
+            <p>Установка «КА-240», циклического действия, производительностью 240 т/час.
+<hr></hr>
+Оборудование спроектировано и  изготовлено полностью в транспортном габарите, что не требует дополнительных разрешений. Установка предназначена для производства высококачественной  асфальтобетонной смеси по качеству и составу соответствующей 
+ГОСТ: 9128-87, 31015.
+<hr></hr>
+На все АСУ предоставляется гарантия
+ 18 месяцев.</p>
+          </div>
+        </div>
+      )}
       </main>
     </>
   );
