@@ -1,6 +1,7 @@
 import "./HomePage.scss";
 import React, { useState, useEffect } from "react";
 import { Image } from "react-bootstrap";
+import { p_desc } from "./Descriptions";
 import backgroundImg from "../images/main_background.png";
 import backgroundImgSmall from "../images/main_background_small.png";
 import historyBar from "../images/history_bar.png";
@@ -14,25 +15,25 @@ import ka120 from "../images/fullsize_ka120.png";
 import ugs240 from "../images/fullsize_ugs.png";
 import details from "../images/fullsize_details.png";
 import details_not_ka from "../images/fullsize_details_not_kaz.png";
-import close_button from "../images/button.png"
+import close_button from "../images/button.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 function HomePage() {
-
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [fadeOut, setFadeOut] = useState(false);
 
   const handleImageClick = (product) => {
     setSelectedProduct(product); // Устанавливаем выбранный продукт
+    setFadeOut(false);
   };
 
   const closeOverlay = () => {
-    setSelectedProduct(null); // Закрываем оверлей
-    setFadeOut(true)
+    setFadeOut(true);
+    setTimeout(() => {
+      setSelectedProduct(null);
+    }, 400);
   };
-
-
 
   const [bgImage, setBgImage] = useState(backgroundImg);
   const [isHidden, setIsHidden] = useState(false);
@@ -100,7 +101,6 @@ function HomePage() {
         </div>
       </header>
 
-      
       <main>
         <br />
         <h1 className="about_us">Знакомство с предприятием</h1>
@@ -164,46 +164,115 @@ function HomePage() {
           <h1 className="products">Наша продукция</h1>
         </div>
         <div className="outer_product flex">
-          <div className="inner_product" data-aos="fade-left" data-aos-duration="600" onClick={() => handleImageClick({ src: ka240})}>
-          <Image src={ka240}/>
-          <span>КА-240</span>
+          <div
+            className="inner_product"
+            data-aos="fade-left"
+            data-aos-duration="600"
+          >
+            <Image
+              src={ka240}
+              onClick={() =>
+                handleImageClick({
+                  src: ka240,
+                  description: p_desc.ka240_p,
+                })
+              }
+            />
+            <span>КА-240</span>
           </div>
-          <div className="inner_product" data-aos="fade-left" data-aos-duration="800">
-          <Image src={ka160}/>
-          <span>КА-160</span>
+          <div
+            className="inner_product"
+            data-aos="fade-left"
+            data-aos-duration="800"
+          >
+            <Image src={ka160} onClick={() =>
+                handleImageClick({
+                  src: ka160,
+                  description: p_desc.ka160_p,
+                })
+              }/>
+            <span>КА-160</span>
           </div>
-          <div className="inner_product" data-aos="fade-left" data-aos-duration="1000">
-          <Image src={ka120}/>
-          <span>КА-120</span>
+          <div
+            className="inner_product"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
+            <Image src={ka120} onClick={() =>
+                handleImageClick({
+                  src: ka120,
+                  description: p_desc.ka120_p,
+                })
+              }/>
+            <span>КА-120</span>
           </div>
-          <div className="inner_product" data-aos="fade-right" data-aos-duration="1000">
-          <Image src={ugs240}/>
-          <span>УГС-240</span>
+          <div
+            className="inner_product"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <Image src={ugs240} onClick={() =>
+                handleImageClick({
+                  src: ugs240,
+                  description: p_desc.ugs240_p,
+                })
+              }/>
+            <span>УГС-240</span>
           </div>
-          <div className="inner_product" data-aos="fade-right" data-aos-duration="800">
-          <Image src={details}/>
-          <span className="details">Запчасти для <br></br> заводов КАЗ</span>
+          <div
+            className="inner_product"
+            data-aos="fade-right"
+            data-aos-duration="800"
+          >
+            <Image src={details} onClick={() =>
+                handleImageClick({
+                  src: details,
+                  description: p_desc.details_p,
+                })
+              }/>
+            <span className="details">
+              Запчасти для <br></br> заводов КАЗ
+            </span>
           </div>
-          <div className="inner_product" data-aos="fade-right" data-aos-duration="600">
-          <Image src={details_not_ka}/>
-          <span className="details">Запчасти для <br></br>импортных АСУ </span>
+          <div
+            className="inner_product"
+            data-aos="fade-right"
+            data-aos-duration="600"
+          >
+            <Image src={details_not_ka} onClick={() =>
+                handleImageClick({
+                  src: details_not_ka,
+                  description: p_desc.details_not_ka_p,
+                })
+              }/>
+            <span className="details">
+              Запчасти для <br></br>импортных АСУ{" "}
+            </span>
           </div>
         </div>
         {selectedProduct && (
-        <div className="overlay" onClick={closeOverlay}>
-          <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-            <Image src={selectedProduct.src} className="overlay-image" />
-            <Image src={close_button} className="close" />
-            <p>Установка «КА-240», циклического действия, производительностью 240 т/час.
-<hr></hr>
-Оборудование спроектировано и  изготовлено полностью в транспортном габарите, что не требует дополнительных разрешений. Установка предназначена для производства высококачественной  асфальтобетонной смеси по качеству и составу соответствующей 
-ГОСТ: 9128-87, 31015.
-<hr></hr>
-На все АСУ предоставляется гарантия
- 18 месяцев.</p>
+          <div
+            className={`overlay ${fadeOut ? "fadeOut" : "fadeIn"}`}
+            onClick={closeOverlay}
+          >
+            <div
+              className="overlay-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image src={selectedProduct.src} className="overlay-image" />
+              <Image
+                src={close_button}
+                className={`close ${fadeOut ? "fadeOut" : "fadeIn"}`}
+                onClick={closeOverlay}
+              />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: selectedProduct.description,
+                }}
+              />
+            </div>
           </div>
-        </div>
-      )}
+        )}
       </main>
     </>
   );

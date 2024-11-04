@@ -1,7 +1,6 @@
 @import "colors";
 @import "fonts";
 
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -20,21 +19,29 @@
   }
 }
 
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(13, 8, 2, 0.868);
+  background: rgba(0, 0, 0, 0.822);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: fadeIn 0.5s forwards;
+ 
+  &.fadeIn{
+    animation: fadeIn 0.5s forwards;
+  }
+  &.fadeOut{
+    animation: fadeOut 0.5s;
+  }
 }
 .overlay-content {
-  background: #e4e4e4;
+  background: #ffffffe6;
+  position: relative;
   padding: 25px;
   border-radius: 30px;
   max-width: 350px;
@@ -55,16 +62,12 @@
 .close {
   position: absolute;
   cursor: pointer;
-  top: 235px;
-  right: 235px;
+  top: 20px;
+  right: 20px;
   z-index: 10; /* Устанавливаем приоритет кнопки закрытия */
   width: 40px;
   height: 40px;
 }
-
-
-
-
 
 main {
   background-color: #d6d6d6;
@@ -79,16 +82,16 @@ span.header {
 
 h1 {
   &.about_us {
-    margin-top: 170px;
+    margin-top: 270px;
     text-align: center;
-    font-size: 72px;
+    font-size: 88px;
     color: $main_black;
     font-family: $rgsts;
   }
   &.products {
     margin-top: 50px;
     text-align: center;
-    font-size: 72px;
+    font-size: 88px;
     color: $main_black;
     font-family: $rgsts;
   }
@@ -101,7 +104,7 @@ p {
     font-family: $rgspb;
   }
   &.about_us {
-    font-size: 32px;
+    font-size: 40px;
     color: #000000;
     font-family: $rgst;
   }
@@ -119,29 +122,24 @@ div {
   }
   &.about_us {
     display: flex;
-    margin-top: 120px;
+    margin-top: 130px;
     justify-content: center;
   }
   &.about_us_inner {
     margin-top: 80px;
-    margin-bottom: 150px;
+    margin-bottom: 230px;
     width: 1240px;
     height: 220px;
   }
   &.about_us_p_div {
-    padding-left: 4%;
     margin-right: 5%;
-    margin-top: 10px;
-  }
-  &.historybar{
-    padding-right: 4%;
   }
   &.outer_product {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Задает расстояние между элементами */
-    margin-top: 120px;
+    margin-top: 100px;
   }
 
   &.inner_product {
@@ -149,24 +147,22 @@ div {
       margin-top: 10px; /* Отступ между изображением и текстом */
       text-align: center;
       font-family: $rgsp;
-      font-size: 58px;
+      font-size: 64px;
       &.details {
-        font-size: 38px;
+        font-size: 40px;
       }
     }
     display: flex;
     flex-direction: column;
     align-items: center;
     width: calc(33.33% - 40px); /* Ширина элемента, чтобы вмещать по 3 в ряд */
-    margin-bottom: 50px; /* Отступ между рядами */
+    margin-bottom: 30px; /* Отступ между рядами */
   }
 }
 /*<<---------->>*/
-.historybar_image{
-  width: 300px;
-}
 .inner_product img {
-  width: 60%; /* Подгоняет размер изображения под ширину родителя */
+  cursor: pointer;
+  width: 70%; /* Подгоняет размер изображения под ширину родителя */
   height: auto; /* Сохраняет пропорции изображения */
 }
 
@@ -203,17 +199,80 @@ div {
   display: block;
 }
 
-@media (max-width: 1730px) {
+@media (max-width: 1780px) {
+  h1 {
+    &.about_us {
+      margin-top: 170px;
+      font-size: 72px;
+    }
+    &.products {
+      margin-top: 50px;
+      font-size: 72px;
+    }
+  }
+
+  p {
+    &.about_us {
+      font-size: 36px;
+      color: #000000;
+      font-family: $rgst;
+    }
+  }
+
   div {
     &.about_us_inner {
-      margin-top: 45px;
+      margin-bottom: 150px;
+      margin-top: 25px;
       width: 100%;
     }
     &.about_us_p_div {
-      margin-left: 2%;
+      margin-left: 4%;
+      margin-right: 5%;
+      margin-top: 10px;
+    }
+    &.about_us {
+      margin-top: 120px;
+    }
+    &.outer_product {
+      margin-top: 120px;
     }
     &.historybar {
-      margin-right: 2%;
+      margin-right: 4%;
+    }
+    &.inner_product {
+      span {
+        font-size: 56px;
+        &.details {
+          font-size: 36px;
+        }
+      }
+      margin-bottom: 50px;
+      img {
+        width: 60%;
+      } /* Отступ между рядами */
+    }
+  }
+  .historybar_image {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1630px) {
+  p {
+    &.about_us {
+      font-size: 33px;
+      color: #000000;
+      font-family: $rgst;
+    }
+  }
+  div {
+    &.inner_product {
+      span {
+        font-size: 52px;
+        &.details {
+          font-size: 32px;
+        }
+      }
     }
   }
 }
@@ -227,11 +286,11 @@ div {
   h1 {
     &.about_us {
       margin-top: 150px;
-      font-size: 72px;
+      font-size: 64px;
     }
     &.products {
       margin-top: 50px;
-      font-size: 72px;
+      font-size: 64px;
     }
   }
 
@@ -241,7 +300,7 @@ div {
     }
     &.about_us {
       margin-top: 20px;
-      font-size: 32px;
+      font-size: 28px;
     }
   }
   /*<<--------->>*/
@@ -251,11 +310,11 @@ div {
     &.header {
       margin-top: 4.2%;
     }
+    &.about_us {
+      margin-top: 100px;
+    }
     &.about_us_inner {
-      margin-top: 0px;
       margin-bottom: 80px;
-      width: 820px;
-      height: 220px;
     }
     &.p_header {
       margin-top: 20%;
@@ -266,9 +325,9 @@ div {
         margin-top: 10px; /* Отступ между изображением и текстом */
         text-align: center;
         font-family: $rgsp;
-        font-size: 58px;
+        font-size: 50px;
         &.details {
-          font-size: 32px;
+          font-size: 30px;
         }
       }
     }
@@ -312,7 +371,7 @@ div {
     }
     &.about_us {
       margin-top: 10px;
-      font-size: 26px;
+      font-size: 25px;
     }
   }
 
@@ -339,9 +398,7 @@ div {
     }
     &.about_us_inner {
       margin-top: 20px;
-      margin-bottom: 45px;
-      width: 720px;
-      height: 230px;
+      margin-bottom: 50px;
     }
     &.about_us {
       margin-top: 100px;
@@ -351,9 +408,9 @@ div {
     }
     &.inner_product {
       span {
-        font-size: 48px;
+        font-size: 40px;
         &.details {
-          font-size: 30px;
+          font-size: 24px;
         }
       }
     }
@@ -416,7 +473,7 @@ div {
       margin-top: 20px;
       margin-bottom: 5px;
       width: 100%;
-      height: 220px;
+      height: 215px;
     }
     &.about_us {
       margin-top: 70px;
@@ -426,11 +483,26 @@ div {
     }
     &.inner_product {
       span {
-        font-size: 40px;
+        font-size: 32px;
         &.details {
-          font-size: 24px;
+          font-size: 20px;
         }
       }
+      margin-bottom: 25px; /* Отступ между рядами */
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  div {
+    &.inner_product {
+      span {
+        font-size: 30px;
+        &.details {
+          font-size: 18px;
+        }
+      }
+      margin-bottom: 20px; /* Отступ между рядами */
     }
   }
 }
@@ -462,7 +534,7 @@ div {
       font-size: 36px;
     }
     &.products {
-      margin-top: 30px;
+      margin-top: 50px;
       font-size: 36px;
     }
   }
@@ -487,20 +559,20 @@ div {
       text-align: left;
     }
     &.about_us {
-      margin-top: 55px;
+      margin-top: 35px;
       justify-content: left;
     }
     &.outer_product {
-      margin-top: 50px;
+      margin-top: 65px;
     }
     &.inner_product {
       span {
-        font-size: 32px;
+        font-size: 28px;
         &.details {
-          font-size: 20px;
+          font-size: 16px;
         }
       }
-      margin-bottom: 15px; /* Отступ между рядами */
+      margin-bottom: 10px; /* Отступ между рядами */
     }
   }
   .flex_small {
@@ -525,7 +597,7 @@ div {
     margin-left: 20px;
   }
   .p_2 {
-    margin-left: 20px;
+    margin-left: 10px;
     text-align: right;
   }
   .i_1 {
@@ -554,14 +626,14 @@ div {
   div {
     &.inner_product {
       span {
-        font-size: 26px;
+        font-size: 24px;
         &.details {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }
     &.outer_product {
-      margin-top: 40px;
+      margin-top: 55px;
     }
   }
   .i_1 {
@@ -587,26 +659,26 @@ div {
     margin-top: 5px;
     font-size: 16px;
   }
-  div{
+  div {
     &.about_us_inner {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 50px;
-  }
-  &.about_us {
-    margin-top: 40px;
-    justify-content: left;
-  }
-  &.inner_product {
-    span {
-      font-size: 22px;
-      &.details {
-        font-size: 12 px;
+      width: 100%;
+      height: 150px;
+      margin-bottom: 50px;
+    }
+    &.about_us {
+      margin-top: 40px;
+      justify-content: left;
+    }
+    &.inner_product {
+      span {
+        font-size: 22px;
+        &.details {
+          font-size: 12px;
+        }
       }
     }
   }
-}
-  
+
   .p_1 {
     width: 80%;
     margin-left: 20px;
@@ -630,23 +702,33 @@ div {
 }
 
 @media (max-width: 520px) {
-  div.about_us_inner {
-    margin-bottom: 40px;
-  }
-  div.about_us {
-    margin-top: 30px;
-    justify-content: left;
+  div {
+    &.about_us_inner {
+      margin-bottom: 40px;
+    }
+    &.about_us {
+      margin-top: 20px;
+      justify-content: left;
+    }
+    &.inner_product {
+      span {
+        font-size: 18px;
+        &.details {
+          font-size: 10px;
+        }
+      }
+    }
   }
   h1.about_us {
     margin-top: 80px;
     font-size: 30px;
   }
   p.about_us {
-    margin-top: 5px;
-    font-size: 14px;
+    margin-top: 15px;
+    font-size: 12px;
   }
   .p_2 {
-    margin-right: 10px;
+    margin-right: 5px;
   }
   .i_2 {
     margin-right: 10px;
