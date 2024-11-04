@@ -26,7 +26,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(33, 22, 4, 0.868);
+  background: rgba(13, 8, 2, 0.868);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,16 +79,16 @@ span.header {
 
 h1 {
   &.about_us {
-    margin-top: 270px;
+    margin-top: 170px;
     text-align: center;
-    font-size: 88px;
+    font-size: 72px;
     color: $main_black;
     font-family: $rgsts;
   }
   &.products {
     margin-top: 50px;
     text-align: center;
-    font-size: 88px;
+    font-size: 72px;
     color: $main_black;
     font-family: $rgsts;
   }
@@ -101,7 +101,7 @@ p {
     font-family: $rgspb;
   }
   &.about_us {
-    font-size: 40px;
+    font-size: 32px;
     color: #000000;
     font-family: $rgst;
   }
@@ -119,24 +119,29 @@ div {
   }
   &.about_us {
     display: flex;
-    margin-top: 130px;
+    margin-top: 120px;
     justify-content: center;
   }
   &.about_us_inner {
     margin-top: 80px;
-    margin-bottom: 230px;
+    margin-bottom: 150px;
     width: 1240px;
     height: 220px;
   }
   &.about_us_p_div {
+    padding-left: 4%;
     margin-right: 5%;
+    margin-top: 10px;
+  }
+  &.historybar{
+    padding-right: 4%;
   }
   &.outer_product {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Задает расстояние между элементами */
-    margin-top: 100px;
+    margin-top: 120px;
   }
 
   &.inner_product {
@@ -144,22 +149,24 @@ div {
       margin-top: 10px; /* Отступ между изображением и текстом */
       text-align: center;
       font-family: $rgsp;
-      font-size: 64px;
+      font-size: 58px;
       &.details {
-        font-size: 40px;
+        font-size: 38px;
       }
     }
     display: flex;
     flex-direction: column;
     align-items: center;
     width: calc(33.33% - 40px); /* Ширина элемента, чтобы вмещать по 3 в ряд */
-    margin-bottom: 30px; /* Отступ между рядами */
+    margin-bottom: 50px; /* Отступ между рядами */
   }
 }
 /*<<---------->>*/
-
+.historybar_image{
+  width: 300px;
+}
 .inner_product img {
-  width: 80%; /* Подгоняет размер изображения под ширину родителя */
+  width: 60%; /* Подгоняет размер изображения под ширину родителя */
   height: auto; /* Сохраняет пропорции изображения */
 }
 
