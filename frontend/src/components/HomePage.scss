@@ -19,7 +19,6 @@
   }
 }
 
-
 .overlay {
   position: fixed;
   top: 0;
@@ -31,11 +30,11 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
- 
-  &.fadeIn{
+
+  &.fadeIn {
     animation: fadeIn 0.5s forwards;
   }
-  &.fadeOut{
+  &.fadeOut {
     animation: fadeOut 0.5s;
   }
 }
@@ -95,6 +94,13 @@ h1 {
     color: $main_black;
     font-family: $rgsts;
   }
+  &.advantages {
+    padding-top: 120px;
+    text-align: center;
+    font-size: 88px;
+    color: $full_white;
+    font-family: $rgsts;
+  }
 }
 
 p {
@@ -107,6 +113,11 @@ p {
     font-size: 40px;
     color: #000000;
     font-family: $rgst;
+  }
+  &.advantages_p {
+    font-size: 50px;
+    color: #ffffff;
+    font-family: $rgsp;
   }
 }
 /*<<--------->>*/
@@ -158,6 +169,20 @@ div {
     width: calc(33.33% - 40px); /* Ширина элемента, чтобы вмещать по 3 в ряд */
     margin-bottom: 30px; /* Отступ между рядами */
   }
+  &.advantages_outer {
+    margin-top: 200px;
+    background-color: #0c0c0c;
+  }
+  &.advantages_inner {
+    padding-bottom: 110px;
+    justify-content: center;
+  }
+  &.advantages_image {
+  }
+  &.advantages_p {
+    margin-left: 10%;
+    width: 50%;
+  }
 }
 /*<<---------->>*/
 .inner_product img {
@@ -197,6 +222,15 @@ div {
 
 .block {
   display: block;
+}
+
+hr{
+  &.advantages{
+    margin-bottom: 200px;
+    width: 720px;
+    height: 16px;
+    background-color: #E97A13;
+  }
 }
 
 @media (max-width: 1780px) {

@@ -2,13 +2,16 @@ import "./HomePage.scss";
 import React, { useState, useEffect } from "react";
 import { Image } from "react-bootstrap";
 import { p_desc } from "./Descriptions";
+
 import backgroundImg from "../images/main_background.png";
 import backgroundImgSmall from "../images/main_background_small.png";
+
 import historyBar from "../images/history_bar.png";
 import logo from "../images/logo.png";
 import history_1 from "../images/history_1.png";
 import history_2 from "../images/history_2.png";
 import history_3 from "../images/history_3.png";
+
 import ka240 from "../images/fullsize_ka240.png";
 import ka160 from "../images/fullsize_ka160.png";
 import ka120 from "../images/fullsize_ka120.png";
@@ -16,6 +19,12 @@ import ugs240 from "../images/fullsize_ugs.png";
 import details from "../images/fullsize_details.png";
 import details_not_ka from "../images/fullsize_details_not_kaz.png";
 import close_button from "../images/button.png";
+
+import icon_gear from "../images/icon_gear.png";
+import icon_auction from "../images/icon_auction.png";
+import icon_like from "../images/icon_like.png";
+import icon_truck from "../images/icon_truck.png";
+
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -185,12 +194,15 @@ function HomePage() {
             data-aos="fade-left"
             data-aos-duration="800"
           >
-            <Image src={ka160} onClick={() =>
+            <Image
+              src={ka160}
+              onClick={() =>
                 handleImageClick({
                   src: ka160,
                   description: p_desc.ka160_p,
                 })
-              }/>
+              }
+            />
             <span>КА-160</span>
           </div>
           <div
@@ -198,12 +210,15 @@ function HomePage() {
             data-aos="fade-left"
             data-aos-duration="1000"
           >
-            <Image src={ka120} onClick={() =>
+            <Image
+              src={ka120}
+              onClick={() =>
                 handleImageClick({
                   src: ka120,
                   description: p_desc.ka120_p,
                 })
-              }/>
+              }
+            />
             <span>КА-120</span>
           </div>
           <div
@@ -211,12 +226,15 @@ function HomePage() {
             data-aos="fade-right"
             data-aos-duration="1000"
           >
-            <Image src={ugs240} onClick={() =>
+            <Image
+              src={ugs240}
+              onClick={() =>
                 handleImageClick({
                   src: ugs240,
                   description: p_desc.ugs240_p,
                 })
-              }/>
+              }
+            />
             <span>УГС-240</span>
           </div>
           <div
@@ -224,12 +242,15 @@ function HomePage() {
             data-aos="fade-right"
             data-aos-duration="800"
           >
-            <Image src={details} onClick={() =>
+            <Image
+              src={details}
+              onClick={() =>
                 handleImageClick({
                   src: details,
                   description: p_desc.details_p,
                 })
-              }/>
+              }
+            />
             <span className="details">
               Запчасти для <br></br> заводов КАЗ
             </span>
@@ -239,12 +260,15 @@ function HomePage() {
             data-aos="fade-right"
             data-aos-duration="600"
           >
-            <Image src={details_not_ka} onClick={() =>
+            <Image
+              src={details_not_ka}
+              onClick={() =>
                 handleImageClick({
                   src: details_not_ka,
                   description: p_desc.details_not_ka_p,
                 })
-              }/>
+              }
+            />
             <span className="details">
               Запчасти для <br></br>импортных АСУ{" "}
             </span>
@@ -273,6 +297,26 @@ function HomePage() {
             </div>
           </div>
         )}
+        <div className="advantages_outer ">
+          <h1 className="advantages">Преимущества работы с нами</h1>
+          <hr className="advantages"/>
+          <div className="advantages_inner flex" >
+            <div className="advantages_image" data-aos="fade-right"><Image src={icon_gear} /></div>
+            <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Используем 99% деталей отечественного производства</p></div>
+          </div>
+          <div className="advantages_inner flex" data-aos="fade-left">
+            <div className="advantages_image"><Image src={icon_auction} /></div>
+            <div className="advantages_p"><p className="advantages_p">Сотрудничаем с государственными и частными заказчиками </p></div>
+          </div>
+          <div className="advantages_inner flex">
+            <div className="advantages_image" data-aos="fade-right"><Image src={icon_like} /></div>
+            <div className="advantages_p"><p className="advantages_p">Обеспечиваем годовую гарантию на запчасти и обслуживание</p></div>
+          </div>
+          <div className="advantages_inner flex" data-aos="fade-right">
+            <div className="advantages_image"><Image src={icon_truck} /></div>
+            <div className="advantages_p"><p className="advantages_p">Доставим завод в любую часть Российской Федерации</p></div>
+          </div>
+        </div>
       </main>
     </>
   );
