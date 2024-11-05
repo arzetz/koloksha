@@ -177,8 +177,6 @@ div {
     padding-bottom: 110px;
     justify-content: center;
   }
-  &.advantages_image {
-  }
   &.advantages_p {
     margin-left: 10%;
     width: 50%;
@@ -195,6 +193,10 @@ div {
   margin-top: 56px;
   margin-left: 38px;
   margin-right: 35px;
+}
+
+.advantages_image {
+  width: 100%;
 }
 
 .flex {
@@ -227,7 +229,7 @@ div {
 hr{
   &.advantages{
     margin-bottom: 200px;
-    width: 720px;
+    width: 920px;
     height: 16px;
     background-color: #E97A13;
   }
@@ -243,6 +245,10 @@ hr{
       margin-top: 50px;
       font-size: 72px;
     }
+    &.advantages {
+      padding-top: 100px;
+      font-size: 72px;
+    }
   }
 
   p {
@@ -250,6 +256,11 @@ hr{
       font-size: 36px;
       color: #000000;
       font-family: $rgst;
+    }
+    &.advantages_p {
+      font-size: 46px;
+      color: #ffffff;
+      font-family: $rgsp;
     }
   }
 
@@ -289,6 +300,17 @@ hr{
   .historybar_image {
     width: 300px;
   }
+  hr{
+    &.advantages{
+      margin-bottom: 180px;
+      width: 680px;
+      height: 14px;
+    }
+  }
+  .advantages_image {
+    width: 90%;
+  }
+  
 }
 
 @media (max-width: 1630px) {
@@ -324,6 +346,10 @@ hr{
     }
     &.products {
       margin-top: 50px;
+      font-size: 64px;
+    }
+    &.advantages {
+      padding-top: 80px;
       font-size: 64px;
     }
   }
@@ -391,6 +417,13 @@ hr{
     width: 240px;
     height: 820px;
   }
+  hr{
+    &.advantages{
+      margin-bottom: 180px;
+      width: 650px;
+      height: 10  px;
+  }
+  }
 }
 
 @media (max-width: 1280px) {
@@ -416,6 +449,10 @@ hr{
     }
     &.products {
       margin-top: 50px;
+      font-size: 58px;
+    }
+    &.advantages {
+      padding-top: 80px;
       font-size: 58px;
     }
   }
@@ -463,6 +500,13 @@ hr{
   .historybar {
     margin-left: 1%;
   }
+  hr{
+    &.advantages{
+      margin-bottom: 180px;
+      width: 500px;
+      height: 8px;
+  }
+  }
 }
 
 @media (max-width: 1024px) {
@@ -486,6 +530,10 @@ hr{
     }
     &.products {
       margin-top: 60px;
+      font-size: 42px;
+    }
+    &.advantages {
+      padding-top: 80px;
       font-size: 42px;
     }
   }
@@ -524,6 +572,13 @@ hr{
       }
       margin-bottom: 25px; /* Отступ между рядами */
     }
+  }
+  hr{
+    &.advantages{
+      margin-bottom: 150px;
+      width: 400px;
+      height: 8px;
+  }
   }
 }
 

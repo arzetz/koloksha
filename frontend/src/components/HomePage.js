@@ -301,20 +301,20 @@ function HomePage() {
           <h1 className="advantages">Преимущества работы с нами</h1>
           <hr className="advantages"/>
           <div className="advantages_inner flex" >
-            <div className="advantages_image" data-aos="fade-right"><Image src={icon_gear} /></div>
+            <div className="advantages_image_div" data-aos="fade-right"><Image src={icon_gear} className="advantages_image" /></div>
             <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Используем 99% деталей отечественного производства</p></div>
           </div>
-          <div className="advantages_inner flex" data-aos="fade-left">
-            <div className="advantages_image"><Image src={icon_auction} /></div>
-            <div className="advantages_p"><p className="advantages_p">Сотрудничаем с государственными и частными заказчиками </p></div>
+          <div className="advantages_inner flex">
+            <div className="advantages_image_div" data-aos="fade-right"><Image src={icon_auction} className="advantages_image" /></div>
+            <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Сотрудничаем с государственными и частными заказчиками </p></div>
           </div>
           <div className="advantages_inner flex">
-            <div className="advantages_image" data-aos="fade-right"><Image src={icon_like} /></div>
-            <div className="advantages_p"><p className="advantages_p">Обеспечиваем годовую гарантию на запчасти и обслуживание</p></div>
+            <div className="advantages_image_div" data-aos="fade-right"><Image src={icon_like} className="advantages_image" /></div>
+            <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Обеспечиваем годовую гарантию на запчасти и обслуживание</p></div>
           </div>
-          <div className="advantages_inner flex" data-aos="fade-right">
-            <div className="advantages_image"><Image src={icon_truck} /></div>
-            <div className="advantages_p"><p className="advantages_p">Доставим завод в любую часть Российской Федерации</p></div>
+          <div className="advantages_inner flex">
+            <div className="advantages_image_div"  data-aos="fade-right"><Image src={icon_truck} className="advantages_image" /></div>
+            <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Доставим завод в любую часть Российской Федерации</p></div>
           </div>
         </div>
       </main>
