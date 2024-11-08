@@ -25,6 +25,8 @@ import icon_auction from "../images/icon_auction.png";
 import icon_like from "../images/icon_like.png";
 import icon_truck from "../images/icon_truck.png";
 
+import myVideo from '../videos/koloksha.mp4';
+
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -75,249 +77,283 @@ function HomePage() {
   }, []);
   return (
     <>
-      <header>
-        <div className="bg-container">
-          <Image src={bgImage} className="bg-image" fluid />
-          <div className="flex">
-            <div className="logo">
-              <Image src={logo} className="logo_img" />
+      <body>
+        <header>
+          <div className="bg-container">
+            <Image src={bgImage} className="bg-image" fluid />
+            <div className="flex">
+              <div className="logo">
+                <Image src={logo} className="logo_img" />
+              </div>
+              <div className="header">
+                <span className="header">
+                  КОЛОКШАНСКИЕ
+                  <br />
+                  АСФАЛЬТОСМЕСИТЕЛИ
+                </span>
+              </div>
             </div>
-            <div className="header">
-              <span className="header">
-                КОЛОКШАНСКИЕ
+            <div className="p_header">
+              <p className="header">
+                №1 СРЕДИ РОССИЙСКИХ
                 <br />
-                АСФАЛЬТОСМЕСИТЕЛИ
+                ПРОИЗВОДИТЕЛЕЙ
+                <br />
+                АСФАЛЬТОСМЕСИТЕЛЕЙ
+              </p>
+            </div>
+            <div className="flex_small">
+              <div className="logo_small">
+                <Image src={logo} className="logo_img" />
+              </div>
+              <div>
+                <p className="header">№1 В РОССИИ</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main>
+          <br />
+          <h1 className="about_us">Знакомство с предприятием</h1>
+          <div className="about_us">
+            <div className="about_us_p_div">
+              <div className="about_us_inner">
+                <p className="about_us p_1">
+                  История завода начинается с 1913 года, когда были построены
+                  первые производственные цеха для изготовления сажи. В 1965
+                  году предприятие получило статус филиала «Владимирского
+                  тракторного завода», а уже позже было переименовано в
+                  «Колокшанский агрегатный завод».
+                </p>
+                <Image
+                  src={history_1}
+                  style={{ display: isHidden ? "flex" : "none" }}
+                  className="i_1"
+                  data-aos="fade-left"
+                />
+              </div>
+              <div className="about_us_inner">
+                <Image
+                  src={history_2}
+                  style={{ display: isHidden ? "flex" : "none" }}
+                  className="i_2"
+                  data-aos="fade-right"
+                />
+                <p className="about_us p_2">
+                  В 1994 году на базе «КАЗ» был образован филиал Московской
+                  промышленно-коммерческой фирмы «Тельтосервис», крупнейшей
+                  компании на территории РФ, занимающейся поставкой и
+                  реализацией запасных частей, узлов и агрегатов к
+                  асфальтосмесительным установкам «Тельтомат».
+                </p>
+              </div>
+              <div className="about_us_inner">
+                <p className="about_us p_1">
+                  В короткий срок «Колокшанский агрегатный завод» освоил выпуск
+                  многих узлов и агрегатов: дозаторов, транспортёров, сушильных
+                  барабанов, и уже в 2002 году специалистами завода была
+                  спроектирована, разработана и изготовлена первая
+                  асфальтосмесительная установка «КА-160»
+                </p>
+                <Image
+                  src={history_3}
+                  style={{ display: isHidden ? "flex" : "none" }}
+                  className="i_1"
+                  data-aos="fade-left"
+                />
+              </div>
+            </div>
+            <div className="historybar" data-aos="fade-left">
+              <Image
+                src={historyBar}
+                className="historybar_image"
+                style={{ display: isHidden ? "none" : "flex" }}
+              />
+            </div>
+          </div>
+          <div>
+            <h1 className="products">Наша продукция</h1>
+          </div>
+          <div className="outer_product flex">
+            <div
+              className="inner_product"
+              data-aos="fade-left"
+              data-aos-duration="600"
+            >
+              <Image
+                src={ka240}
+                onClick={() =>
+                  handleImageClick({
+                    src: ka240,
+                    description: p_desc.ka240_p,
+                  })
+                }
+              />
+              <span>КА-240</span>
+            </div>
+            <div
+              className="inner_product"
+              data-aos="fade-left"
+              data-aos-duration="800"
+            >
+              <Image
+                src={ka160}
+                onClick={() =>
+                  handleImageClick({
+                    src: ka160,
+                    description: p_desc.ka160_p,
+                  })
+                }
+              />
+              <span>КА-160</span>
+            </div>
+            <div
+              className="inner_product"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
+              <Image
+                src={ka120}
+                onClick={() =>
+                  handleImageClick({
+                    src: ka120,
+                    description: p_desc.ka120_p,
+                  })
+                }
+              />
+              <span>КА-120</span>
+            </div>
+            <div
+              className="inner_product"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              <Image
+                src={ugs240}
+                onClick={() =>
+                  handleImageClick({
+                    src: ugs240,
+                    description: p_desc.ugs240_p,
+                  })
+                }
+              />
+              <span>УГС-240</span>
+            </div>
+            <div
+              className="inner_product"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              <Image
+                src={details}
+                onClick={() =>
+                  handleImageClick({
+                    src: details,
+                    description: p_desc.details_p,
+                  })
+                }
+              />
+              <span className="details">
+                Запчасти для <br></br> заводов КАЗ
+              </span>
+            </div>
+            <div
+              className="inner_product"
+              data-aos="fade-right"
+              data-aos-duration="600"
+            >
+              <Image
+                src={details_not_ka}
+                onClick={() =>
+                  handleImageClick({
+                    src: details_not_ka,
+                    description: p_desc.details_not_ka_p,
+                  })
+                }
+              />
+              <span className="details">
+                Запчасти для <br></br>импортных АСУ{" "}
               </span>
             </div>
           </div>
-          <div className="p_header">
-            <p className="header">
-              №1 СРЕДИ РОССИЙСКИХ
-              <br />
-              ПРОИЗВОДИТЕЛЕЙ
-              <br />
-              АСФАЛЬТОСМЕСИТЕЛЕЙ
-            </p>
-          </div>
-          <div className="flex_small">
-            <div className="logo_small">
-              <Image src={logo} className="logo_img" />
-            </div>
-            <div>
-              <p className="header">№1 В РОССИИ</p>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <br />
-        <h1 className="about_us">Знакомство с предприятием</h1>
-        <div className="about_us">
-          <div className="about_us_p_div">
-            <div className="about_us_inner">
-              <p className="about_us p_1">
-                История завода начинается с 1913 года, когда были построены
-                первые производственные цеха для изготовления сажи. В 1965 году
-                предприятие получило статус филиала «Владимирского тракторного
-                завода», а уже позже было переименовано в «Колокшанский
-                агрегатный завод».
-              </p>
-              <Image
-                src={history_1}
-                style={{ display: isHidden ? "flex" : "none" }}
-                className="i_1"
-                data-aos="fade-left"
-              />
-            </div>
-            <div className="about_us_inner">
-              <Image
-                src={history_2}
-                style={{ display: isHidden ? "flex" : "none" }}
-                className="i_2"
-                data-aos="fade-right"
-              />
-              <p className="about_us p_2">
-                В 1994 году на базе «КАЗ» был образован филиал Московской
-                промышленно-коммерческой фирмы «Тельтосервис», крупнейшей
-                компании на территории РФ, занимающейся поставкой и реализацией
-                запасных частей, узлов и агрегатов к асфальтосмесительным
-                установкам «Тельтомат».
-              </p>
-            </div>
-            <div className="about_us_inner">
-              <p className="about_us p_1">
-                В короткий срок «Колокшанский агрегатный завод» освоил выпуск
-                многих узлов и агрегатов: дозаторов, транспортёров, сушильных
-                барабанов, и уже в 2002 году специалистами завода была
-                спроектирована, разработана и изготовлена первая
-                асфальтосмесительная установка «КА-160»
-              </p>
-              <Image
-                src={history_3}
-                style={{ display: isHidden ? "flex" : "none" }}
-                className="i_1"
-                data-aos="fade-left"
-              />
-            </div>
-          </div>
-          <div className="historybar" data-aos="fade-left">
-            <Image
-              src={historyBar}
-              className="historybar_image"
-              style={{ display: isHidden ? "none" : "flex" }}
-            />
-          </div>
-        </div>
-        <div>
-          <h1 className="products">Наша продукция</h1>
-        </div>
-        <div className="outer_product flex">
-          <div
-            className="inner_product"
-            data-aos="fade-left"
-            data-aos-duration="600"
-          >
-            <Image
-              src={ka240}
-              onClick={() =>
-                handleImageClick({
-                  src: ka240,
-                  description: p_desc.ka240_p,
-                })
-              }
-            />
-            <span>КА-240</span>
-          </div>
-          <div
-            className="inner_product"
-            data-aos="fade-left"
-            data-aos-duration="800"
-          >
-            <Image
-              src={ka160}
-              onClick={() =>
-                handleImageClick({
-                  src: ka160,
-                  description: p_desc.ka160_p,
-                })
-              }
-            />
-            <span>КА-160</span>
-          </div>
-          <div
-            className="inner_product"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-          >
-            <Image
-              src={ka120}
-              onClick={() =>
-                handleImageClick({
-                  src: ka120,
-                  description: p_desc.ka120_p,
-                })
-              }
-            />
-            <span>КА-120</span>
-          </div>
-          <div
-            className="inner_product"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-          >
-            <Image
-              src={ugs240}
-              onClick={() =>
-                handleImageClick({
-                  src: ugs240,
-                  description: p_desc.ugs240_p,
-                })
-              }
-            />
-            <span>УГС-240</span>
-          </div>
-          <div
-            className="inner_product"
-            data-aos="fade-right"
-            data-aos-duration="800"
-          >
-            <Image
-              src={details}
-              onClick={() =>
-                handleImageClick({
-                  src: details,
-                  description: p_desc.details_p,
-                })
-              }
-            />
-            <span className="details">
-              Запчасти для <br></br> заводов КАЗ
-            </span>
-          </div>
-          <div
-            className="inner_product"
-            data-aos="fade-right"
-            data-aos-duration="600"
-          >
-            <Image
-              src={details_not_ka}
-              onClick={() =>
-                handleImageClick({
-                  src: details_not_ka,
-                  description: p_desc.details_not_ka_p,
-                })
-              }
-            />
-            <span className="details">
-              Запчасти для <br></br>импортных АСУ{" "}
-            </span>
-          </div>
-        </div>
-        {selectedProduct && (
-          <div
-            className={`overlay ${fadeOut ? "fadeOut" : "fadeIn"}`}
-            onClick={closeOverlay}
-          >
+          {selectedProduct && (
             <div
-              className="overlay-content"
-              onClick={(e) => e.stopPropagation()}
+              className={`overlay ${fadeOut ? "fadeOut" : "fadeIn"}`}
+              onClick={closeOverlay}
             >
-              <Image src={selectedProduct.src} className="overlay-image" />
-              <Image
-                src={close_button}
-                className={`close ${fadeOut ? "fadeOut" : "fadeIn"}`}
-                onClick={closeOverlay}
-              />
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: selectedProduct.description,
-                }}
-              />
+              <div
+                className="overlay-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image src={selectedProduct.src} className="overlay-image" />
+                <Image
+                  src={close_button}
+                  className={`close ${fadeOut ? "fadeOut" : "fadeIn"}`}
+                  onClick={closeOverlay}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: selectedProduct.description,
+                  }}
+                />
+              </div>
+            </div>
+          )}
+          <div className="advantages_outer ">
+            <h1 className="advantages">Преимущества работы с нами</h1>
+            <hr className="advantages" />
+            <div className="advantages_inner flex">
+              <div className="advantages_image_div" data-aos="fade-right">
+                <Image src={icon_gear} className="advantages_image" />
+              </div>
+              <div className="advantages_p" data-aos="fade-left">
+                <p className="advantages_p">
+                  Используем 99% деталей отечественного производства
+                </p>
+              </div>
+            </div>
+            <div className="advantages_inner flex">
+              <div className="advantages_image_div" data-aos="fade-right">
+                <Image src={icon_auction} className="advantages_image" />
+              </div>
+              <div className="advantages_p" data-aos="fade-left">
+                <p className="advantages_p">
+                  Сотрудничаем с государственными и частными заказчиками{" "}
+                </p>
+              </div>
+            </div>
+            <div className="advantages_inner flex">
+              <div className="advantages_image_div" data-aos="fade-right">
+                <Image src={icon_like} className="advantages_image" />
+              </div>
+              <div className="advantages_p" data-aos="fade-left">
+                <p className="advantages_p">
+                  Обеспечиваем годовую гарантию на запчасти и обслуживание
+                </p>
+              </div>
+            </div>
+            <div className="advantages_inner flex">
+              <div className="advantages_image_div" data-aos="fade-right">
+                <Image src={icon_truck} className="advantages_image" />
+              </div>
+              <div className="advantages_p" data-aos="fade-left">
+                <p className="advantages_p">
+                  Доставим завод в любую часть Российской Федерации
+                </p>
+              </div>
             </div>
           </div>
-        )}
-        <div className="advantages_outer ">
-          <h1 className="advantages">Преимущества работы с нами</h1>
-          <hr className="advantages"/>
-          <div className="advantages_inner flex" >
-            <div className="advantages_image_div" data-aos="fade-right"><Image src={icon_gear} className="advantages_image" /></div>
-            <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Используем 99% деталей отечественного производства</p></div>
+          <br></br>
+          <div className="video_div">
+            <h1>Ещё немного о нас</h1>
+            <video width="75%" height="auto" controls>
+              <source src={myVideo} type="video/mp4" />
+              Ваш браузер не поддерживает HTML5 видео.
+            </video>
           </div>
-          <div className="advantages_inner flex">
-            <div className="advantages_image_div" data-aos="fade-right"><Image src={icon_auction} className="advantages_image" /></div>
-            <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Сотрудничаем с государственными и частными заказчиками </p></div>
-          </div>
-          <div className="advantages_inner flex">
-            <div className="advantages_image_div" data-aos="fade-right"><Image src={icon_like} className="advantages_image" /></div>
-            <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Обеспечиваем годовую гарантию на запчасти и обслуживание</p></div>
-          </div>
-          <div className="advantages_inner flex">
-            <div className="advantages_image_div"  data-aos="fade-right"><Image src={icon_truck} className="advantages_image" /></div>
-            <div className="advantages_p" data-aos="fade-left"><p className="advantages_p">Доставим завод в любую часть Российской Федерации</p></div>
-          </div>
-        </div>
-      </main>
+        </main>
+      </body>
     </>
   );
 }
