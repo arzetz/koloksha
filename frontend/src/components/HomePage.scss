@@ -175,7 +175,9 @@ div {
   }
   &.advantages_inner {
     padding-bottom: 110px;
+    display: flex;
     justify-content: center;
+    align-items: center;
   }
   &.advantages_p {
     margin-left: 10%;
@@ -296,6 +298,10 @@ hr{
         width: 60%;
       } /* Отступ между рядами */
     }
+    &.advantages_p {
+      margin-left: 10%;
+      width: 60%;
+    }
   }
   .historybar_image {
     width: 300px;
@@ -307,7 +313,7 @@ hr{
       height: 14px;
     }
   }
-  .advantages_image {
+  .advantages_image {    
     width: 90%;
   }
   
@@ -320,6 +326,9 @@ hr{
       color: #000000;
       font-family: $rgst;
     }
+    &.advantages_p {
+      font-size: 46px;
+    }
   }
   div {
     &.inner_product {
@@ -330,6 +339,13 @@ hr{
         }
       }
     }
+    &.advantages_p {
+      margin-left: 10%;
+      width: 60%;
+    }
+  }
+  .advantages_image {
+    width: 80%;
   }
 }
 
@@ -345,7 +361,7 @@ hr{
       font-size: 64px;
     }
     &.products {
-      margin-top: 50px;
+      margin-top: 40px;
       font-size: 64px;
     }
     &.advantages {
@@ -362,11 +378,15 @@ hr{
       margin-top: 20px;
       font-size: 28px;
     }
+    &.advantages_p {
+      font-size: 44px;
+    }
   }
   /*<<--------->>*/
 
   /*Стили контейнеров*/
-  div {
+  div
+   {
     &.header {
       margin-top: 4.2%;
     }
@@ -390,6 +410,10 @@ hr{
           font-size: 30px;
         }
       }
+    }
+    &.advantages_p {
+      margin-left: 5%;
+      width: 60%;
     }
   }
 
@@ -421,8 +445,11 @@ hr{
     &.advantages{
       margin-bottom: 180px;
       width: 650px;
-      height: 10  px;
+      height: 10px;
   }
+  }
+  .advantages_image {
+    width: 75%;
   }
 }
 
@@ -439,6 +466,9 @@ hr{
     &.about_us {
       margin-top: 10px;
       font-size: 25px;
+    }
+    &.advantages_p {
+      font-size: 40px;
     }
   }
 
@@ -485,6 +515,10 @@ hr{
         }
       }
     }
+    &.advantages_p {
+      margin-left: 0%;
+      width: 65%;
+    }
   }
 
   .about_us_p_div {
@@ -502,7 +536,7 @@ hr{
   }
   hr{
     &.advantages{
-      margin-bottom: 180px;
+      margin-bottom: 150px;
       width: 500px;
       height: 8px;
   }
@@ -521,6 +555,9 @@ hr{
     }
     &.header {
       font-size: 24px;
+    }
+    &.advantages_p {
+      font-size: 32px;
     }
   }
   h1 {
@@ -579,6 +616,9 @@ hr{
       width: 400px;
       height: 8px;
   }
+  }
+  .advantages_image {
+    width: 65%;
   }
 }
 
