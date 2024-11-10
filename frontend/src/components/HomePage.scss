@@ -23,9 +23,14 @@ body {
   overflow-x: hidden;
 }
 
-.video_div{
-  margin-top: 150px;
+.video_div {
+  margin-top: 10%;
   text-align: center;
+}
+
+.video_inner {
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay {
@@ -109,6 +114,9 @@ h1 {
     font-size: 88px;
     color: $full_white;
     font-family: $rgsts;
+  }
+  &.video_h1 {
+    @extend .products;
   }
 }
 
@@ -239,11 +247,26 @@ div {
 
 hr {
   &.advantages {
+    border: 0;
     margin-bottom: 200px;
     width: 920px;
     height: 16px;
     background-color: #e97a13;
   }
+}
+video {
+  z-index: 1;
+  margin-top: 3%;
+}
+
+.background-line {
+  margin-top: 3%;
+  position: absolute;
+  text-align: center;
+  width: 78%; /* Ширина линии 0 пикселей */
+  height: 350px; /* Высота линии */
+  background-color: #e97a13; /* Цвет фона */
+  z-index: 0; /* Линия будет под video */
 }
 
 @media (max-width: 1780px) {
@@ -313,6 +336,9 @@ hr {
     }
     &.advantages_outer {
       margin-top: 10%;
+    }
+    &.background-line {
+      height: 300px; /* Высота линии */
     }
   }
   .historybar_image {
@@ -529,6 +555,9 @@ hr {
       margin-left: 0%;
       width: 65%;
     }
+    &.background-line {
+      height: 230px; /* Высота линии */
+    }
   }
 
   .about_us_p_div {
@@ -622,6 +651,9 @@ hr {
     &.advantages_inner {
       padding-bottom: 80px;
     }
+    &.background-line {
+      height: 180px; /* Высота линии */
+    }
   }
   hr {
     &.advantages {
@@ -661,6 +693,9 @@ hr {
     &.advantages_p {
       margin-left: 0%;
       width: 60%;
+    }
+    &.background-line {
+      height: 150px; /* Высота линии */
     }
   }
   .advantages_image {
@@ -834,6 +869,9 @@ hr {
     &.advantages_image_div {
       width: 30%;
     }
+    &.background-line {
+      height: 110px; /* Высота линии */
+    }
   }
   .advantages_image {
     width: 50%;
@@ -898,6 +936,9 @@ hr {
         }
       }
     }
+    &.background-line {
+      height: 90px; /* Высота линии */
+    }
   }
 
   .p_1 {
@@ -945,6 +986,9 @@ hr {
           font-size: 10px;
         }
       }
+    }
+    &.background-line {
+      height: 70px; /* Высота линии */
     }
   }
   h1 {

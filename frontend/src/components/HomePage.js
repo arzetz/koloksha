@@ -25,7 +25,7 @@ import icon_auction from "../images/icon_auction.png";
 import icon_like from "../images/icon_like.png";
 import icon_truck from "../images/icon_truck.png";
 
-import myVideo from '../videos/koloksha.mp4';
+import myVideo from "../videos/koloksha.mp4";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -346,11 +346,14 @@ function HomePage() {
           </div>
           <br></br>
           <div className="video_div">
-            <h1>Ещё немного о нас</h1>
-            <video width="75%" height="auto" controls>
-              <source src={myVideo} type="video/mp4" />
-              Ваш браузер не поддерживает HTML5 видео.
-            </video>
+            <h1 className="video_h1">Ещё немного о нас</h1>
+            <div className="video_inner flex">
+              <video width="75%" height="auto" controls>
+                <source src={myVideo} type="video/mp4" />
+                Ваш браузер не поддерживает HTML5 видео.
+              </video>
+              <div class="background-line"></div>
+            </div>
           </div>
         </main>
       </body>
