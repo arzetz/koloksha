@@ -283,21 +283,26 @@ function HomePage() {
               onClick={closeOverlay}
             >
               <div
-                className="overlay-content"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Image src={selectedProduct.src} className="overlay-image" />
-                <Image
-                  src={close_button}
-                  className={`close ${fadeOut ? "fadeOut" : "fadeIn"}`}
-                  onClick={closeOverlay}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: selectedProduct.description,
-                  }}
-                />
-              </div>
+              className="overlay-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image src={selectedProduct.src} className="overlay-image" />
+              <Image
+                src={close_button}
+                className={`close ${fadeOut ? "fadeOut" : "fadeIn"}`}
+                onClick={closeOverlay}
+              />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: selectedProduct.description,
+                }}
+              />
+              {(selectedProduct.src === details || selectedProduct.src === details_not_ka) && (
+        <div className="button_telto">
+          <a href="https://teltoservis.ru/" className="button_telto">На сайт "ООО Тельтосервис"</a>
+        </div>
+      )}
+            </div>
             </div>
           )}
           <div className="advantages_outer ">
