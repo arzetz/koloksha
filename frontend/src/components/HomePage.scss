@@ -82,6 +82,13 @@ body {
   height: 40px;
 }
 
+a{
+  &.button_telto{
+  text-decoration: none;
+  color: #d6d6d6;
+  font-family: $rgsp;
+}}
+
 main {
   background-color: #d6d6d6;
 }
@@ -199,6 +206,20 @@ div {
   &.advantages_p {
     margin-left: 10%;
     width: 50%;
+  }
+  &.button_telto{
+    background-color: #E97A13;
+    border: none;
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 45px;
+    transition: transform 0.3s ease;
+    &:hover{
+    transform: scale(1.1);  
+    }
   }
 }
 /*<<---------->>*/
