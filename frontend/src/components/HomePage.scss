@@ -82,14 +82,20 @@ body {
   height: 40px;
 }
 
-a{
-  &.button_telto{
-  text-decoration: none;
-  color: #d6d6d6;
-  font-family: $rgsp;
-}}
+a {
+  &.button_telto {
+    text-decoration: none;
+    color: #d6d6d6;
+    font-family: $rgsp;
+  }
+}
 
 main {
+  background-color: #d6d6d6;
+}
+
+footer{
+  margin-top: 300px;
   background-color: #d6d6d6;
 }
 
@@ -207,8 +213,8 @@ div {
     margin-left: 10%;
     width: 50%;
   }
-  &.button_telto{
-    background-color: #E97A13;
+  &.button_telto {
+    background-color: #e97a13;
     border: none;
     border-radius: 10px;
     width: 250px;
@@ -217,8 +223,8 @@ div {
     margin-top: 20px;
     margin-left: 45px;
     transition: transform 0.3s ease;
-    &:hover{
-    transform: scale(1.1);  
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
@@ -278,6 +284,7 @@ hr {
 video {
   z-index: 1;
   margin-top: 3%;
+  border-radius: 30px;
 }
 
 .background-line {
@@ -723,6 +730,9 @@ video {
     width: 50%;
     margin-left: 20%;
   }
+  video {
+    border-radius: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -988,6 +998,9 @@ video {
       width: 250px;
       height: 5px;
     }
+  }
+  video {
+    border-radius: 10px;
   }
 }
 

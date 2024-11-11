@@ -49,10 +49,10 @@ export const details_not_ka_p = `
 `;
 
 export const p_desc = {
-    ka240_p,
-    ka160_p,
-    ka120_p,
-    ugs240_p,
-    details_p,
-    details_not_ka_p
-  };
+  ka240_p,
+  ka160_p,
+  ka120_p,
+  ugs240_p,
+  details_p,
+  details_not_ka_p,
+};
