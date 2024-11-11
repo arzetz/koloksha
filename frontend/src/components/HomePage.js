@@ -366,11 +366,29 @@ function HomePage() {
             </div>
           </div>
         </main>
-        <footer>
-        <Image src={backgroundFtr} className="bg-image" fluid />
-        <div className="flex">
-          </div>
-        </footer>
+        <footer className="footer">
+  <div className="footer_bg">
+    <Image src={backgroundFtr} fluid className="footer_bg_img" />
+  </div>
+  <div className="footer_content">
+    <div className="footer_form">
+      <h2>Оставьте заявку</h2>
+      <p>мы отправим Вам цены, условия и сроки поставки</p>
+      <form>
+        <input type="text" placeholder="Имя" />
+        <input type="tel" placeholder="Телефон" />
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+    <div className="footer_contacts">
+      <h3>Телефон для связи</h3>
+      <p>+7 (961) 111-24-17</p>
+      <p>+7 (905) 618-38-83</p>
+      <h3>Электронная почта</h3>
+      <p>mail@koloksha.ru</p>
+    </div>
+  </div>
+</footer>
       </body>
     </>
   );

@@ -24,6 +24,7 @@ body {
 }
 
 .video_div {
+  position: relative;
   margin-top: 10%;
   text-align: center;
 }
@@ -94,9 +95,86 @@ main {
   background-color: #d6d6d6;
 }
 
-footer{
-  margin-top: 300px;
-  background-color: #d6d6d6;
+.footer {
+  padding-top: 25%;
+  position: relative;
+  overflow: hidden;
+
+  .footer_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    .footer_bg_img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .footer_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    color: #fff;
+
+    .footer_form {
+      max-width: 45%;
+      
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        
+        input {
+          margin-bottom: 0.5rem;
+          padding: 0.75rem;
+          border: none;
+          border-radius: 4px;
+        }
+
+        button {
+          padding: 0.75rem;
+          border: none;
+          background-color: #007bff;
+          color: #fff;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+
+    .footer_contacts {
+      max-width: 45%;
+      
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      p {
+        margin: 0.2rem 0;
+      }
+    }
+  }
+}
+
+.footer_bg_img{
+height: 1000px;
+width: 100%;
 }
 
 /*Стили текста*/
@@ -227,6 +305,11 @@ div {
       transform: scale(1.1);
     }
   }
+  &.footer_bg{
+    text-align: center;
+   
+ 
+  }
 }
 /*<<---------->>*/
 .inner_product img {
@@ -298,6 +381,10 @@ video {
 }
 
 @media (max-width: 1780px) {
+  .footer_bg_img{
+    height: 800px;
+    width: 100%;
+    }
   h1 {
     &.about_us {
       margin-top: 170px;
@@ -611,6 +698,10 @@ video {
 }
 
 @media (max-width: 1024px) {
+  .footer_bg_img{
+    height: 500px;
+    width: 100%;
+    }
   span.header {
     font-size: 18px;
   }
