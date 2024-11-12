@@ -104,8 +104,7 @@ footer {
     background-color: #d6d6d6;
   background-position: center;
   position: relative;
-  background-color: f;
-    z-index: -1;
+   
     padding-top: 10%;
     text-align: center;
     justify-content: center;
@@ -113,11 +112,13 @@ footer {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 700px;
+    
   }
   .form {
     position: relative;
     justify-content: center;
     z-index: 10000;
+    gap: 500px;
   }
 }
 
@@ -153,6 +154,14 @@ h1 {
   &.video_h1 {
     @extend .products;
   }
+  &.form_h1{
+    margin-top: 40px;
+    margin-bottom: 7px;
+    margin-left: 35px;
+    font-size: 40px;
+    color: $main_black;
+    font-family: $rgst;
+  }
 }
 
 p {
@@ -170,6 +179,14 @@ p {
     font-size: 50px;
     color: #ffffff;
     font-family: $rgsp;
+  }
+  &.form_p{
+    margin: 0;
+    font-size: 26px;
+    margin-bottom: 45px;
+    margin-left: 35px;
+    color: $main_black;
+    font-family: $rgst;
   }
 }
 /*<<--------->>*/
@@ -252,6 +269,17 @@ div {
   &.footer_bg {
     text-align: center;
   }
+  &.centered-elements{
+    text-align: center;
+  }
+  &.form_div{
+    border-radius: 20px;
+    text-align: left;
+    z-index: 10;
+    width: 450px;
+    height: 630px;
+    background-color: #FFFFFF;
+  }
 }
 /*<<---------->>*/
 .inner_product img {
@@ -321,6 +349,47 @@ video {
   background-color: #e97a13; /* Цвет фона */
   z-index: 0; /* Линия будет под video */
 }
+
+.inner_label{
+  width: 350px;
+  height: 62px;
+  margin-bottom: 33px;
+  border: none;
+  background-color: #EFEFEF;
+  padding-left: 30px;
+
+
+  font-size: 26px;
+  font-family: $rgspb;
+  color: #868686;
+  
+ 
+}
+
+.inner_label::placeholder {
+  font-size: 26px;
+  color: #868686; /* Цвет текста */
+  font-family: $rgspb;
+  
+}
+
+.form-button {
+ width: 380px;
+ height: 60px;
+  background-color: #0C0C0C; /* Черный фон */
+  color: #fff; /* Белый текст */
+  border: none; /* Убираем границу */
+  font-size: 26px; /* Размер шрифта */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 8%;
+  margin-top: 30px;
+}
+
+
 
 @media (max-width: 1780px) {
   h1 {
@@ -633,6 +702,12 @@ video {
       height: 8px;
     }
   }
+  footer {
+    .footer_bg {
+      background-size: 100% 100%;
+      height: 500px;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
@@ -717,6 +792,12 @@ video {
   }
   .advantages_image {
     width: 65%;
+  }
+  footer {
+    .footer_bg {
+      background-size: 100% 100%;
+      height: 400px;
+    }
   }
 }
 
@@ -882,6 +963,12 @@ video {
       margin-bottom: 70px;
       width: 300px;
       height: 6px;
+    }
+  }
+  footer {
+    .footer_bg {
+      background-size: 100% 100%;
+      height: 350px;
     }
   }
 }

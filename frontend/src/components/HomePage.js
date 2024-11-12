@@ -1,6 +1,6 @@
 import "./HomePage.scss";
 import React, { useState, useEffect } from "react";
-import { Image } from "react-bootstrap";
+import { Image, Form, Button } from "react-bootstrap";
 import { p_desc } from "./Descriptions";
 
 import backgroundImg from "../images/main_background.png";
@@ -365,27 +365,59 @@ function HomePage() {
           </div>
         </main>
         <footer>
-  <div className="footer_bg">
-  <div className="flex form">
-    <div className="">
-    <form>
-      <h2>Оставьте заявку</h2>
-      <p>мы отправим Вам цены, условия и сроки поставки</p>
-        <input type="text" placeholder="Имя" />
-        <input type="tel" placeholder="Телефон" />
-        <button type="submit">Отправить</button>
-      </form>
-    </div>
-    <div>
-      <h3>Телефон для связи</h3>
-      <p>+7 (961) 111-24-17</p>
-      <p>+7 (905) 618-38-83</p>
-      <h3>Электронная почта</h3>
-      <p>mail@koloksha.ru</p>
-    </div>
-  </div>
-  </div>
-</footer>
+          <div className="footer_bg">
+            <div className="flex form">
+              <div className="form_div">
+                <Form>
+                  <h1 className="form_h1">Оставьте заявку</h1>
+                  <p className="form_p">
+                    мы отправим Вам цены,<br></br> условия и сроки поставки
+                  </p>
+                  <div className="centered-elements">
+                    <Form.Group controlId="formName">
+                      <Form.Control
+                        type="text"
+                        placeholder="Ваше имя"
+                        required
+                        className="inner_label"
+                      />
+                    </Form.Group>
+                    <Form.Group controlId="formPhone">
+                      <Form.Control
+                        type="tel"
+                        placeholder="Ваш телефон"
+                        required
+                        className="inner_label"
+                      />
+                    </Form.Group>
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      className="form-button"
+                    >
+                      ОТПРАВИТЬ
+                    </Button>
+                    <Form.Group controlId="formCheckbox">
+                      <Form.Check
+                        type="checkbox"
+                        id="custom-checkbox"
+                        label="Согласен с условиями"
+                        className="custom-checkbox" // Класс для стилизации
+                      />
+                    </Form.Group>
+                  </div>
+                </Form>
+              </div>
+              <div className="phone_block">
+                <h3>Телефон для связи</h3>
+                <p>+7 (961) 111-24-17</p>
+                <p>+7 (905) 618-38-83</p>
+                <h3>Электронная почта</h3>
+                <p>mail@koloksha.ru</p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </body>
     </>
   );
