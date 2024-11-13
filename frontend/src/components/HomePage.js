@@ -75,6 +75,11 @@ function HomePage() {
   useEffect(() => {
     Aos.init();
   }, []);
+
+  const sendEmail = () => {
+    window.location.href = `mailto:${"mail@koloksha.ru"}`;
+  };
+
   return (
     <>
       <body>
@@ -409,11 +414,15 @@ function HomePage() {
                 </Form>
               </div>
               <div className="phone_block">
-                <h3>Телефон для связи</h3>
-                <p>+7 (961) 111-24-17</p>
-                <p>+7 (905) 618-38-83</p>
-                <h3>Электронная почта</h3>
-                <p>mail@koloksha.ru</p>
+                <p className="phone_block_p">Телефон для связи
+                <br></br>
+                  +7 (961) 111-24-17
+                  <br></br>
+                  +7 (905) 618-38-83</p>
+                <br></br>
+                <p className="phone_block_p">Электронная почта
+                  <br></br>
+                <span onClick={sendEmail} style={{cursor: 'pointer', textDecoration: 'underline'}}>mail@koloksha.ru</span></p>
               </div>
             </div>
           </div>
