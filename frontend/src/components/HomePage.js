@@ -80,6 +80,42 @@ function HomePage() {
     window.location.href = `mailto:${"mail@koloksha.ru"}`;
   };
 
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const name = document.getElementById('formName').value;
+    const phone = document.getElementById('formPhone').value;
+
+    const formData = {
+      name: name,
+      phone: phone,
+    };
+
+    try {
+      // Отправка данных на сервер через fetch
+      const response = await fetch('/api/place_order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // Отправляем данные в формате JSON
+      });
+
+      if (response.ok) {
+        alert('Заявка успешно отправлена!');
+        // Очистить форму после успешной отправки
+        document.getElementById('formName').value = '';
+        document.getElementById('formPhone').value = '';
+      } else {
+        alert('Ошибка при отправке заявки. Попробуйте еще раз.');
+      }
+    } catch (error) {
+      console.error('Ошибка:', error);
+      alert('Ошибка при отправке данных. Попробуйте еще раз.');
+    }
+  };
+
+
   return (
     <>
       <body>
@@ -373,7 +409,7 @@ function HomePage() {
           <div className="footer_bg">
             <div className="flex form">
               <div className="form_div">
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <h1 className="form_h1">Оставьте заявку</h1>
                   <p className="form_p">
                     мы отправим Вам цены,<br></br> условия и сроки поставки

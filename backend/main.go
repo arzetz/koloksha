@@ -24,7 +24,7 @@ func main() {
 		c.Data(http.StatusOK, "image/png", data)
 	})
 
-	router.POST("/place_order", handlers.PlaceOrder)
+	router.POST("/api/place_order", handlers.PlaceOrder)
 
 	router.Run(":8082")
 }
